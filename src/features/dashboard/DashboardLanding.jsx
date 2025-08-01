@@ -1,8 +1,11 @@
 import React from "react"
+import { Outlet } from "react-router-dom";
 
-const DashboardLanding = ()=>{
+const DashboardLanding = () => {
     return (<>
-    <div>dahboard</div>
+        <div>dahboard</div>
+
+        <Outlet />
     </>);
 }
 
