@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, lazy, Suspense } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Functions
+// import prepareApp from "../../../../utils/lib/prepareApp.js";
+
+// Components
+import LoaderPage from "./app/components/LoaderPage.jsx";
+
+const Landing = lazy(() => import("./app/containers/Landing.jsx"));
+
+const App = () => {
+  useEffect(() => {
+    // prepareApp();
+  }, []);
 
   return (
     <>
-  <div className='h-96 w-96 bg-rose-500'>sdfds</div>
+      <Suspense
+        fallback={
+          <LoaderPage className={"h-screen bg-white dark:bg-background"} />
+        }
+      >
+        <Landing />
+      </Suspense>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
