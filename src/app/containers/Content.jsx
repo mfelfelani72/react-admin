@@ -13,11 +13,12 @@ const LazyDashboardLanding = lazy(() =>
     import("../../features/dashboard/DashboardLanding.jsx")
 );
 
-const LazyHomeLanding = lazy(() =>
-    import("../../features/dashboard/HomeLanding.jsx")
+const LazyBody = lazy(() =>
+    import("../../features/dashboard/components/Body.jsx")
 );
 
 
+  
 
 const Content = () => {
     return (
@@ -38,7 +39,8 @@ const Content = () => {
 
                 {/* Dashboard */}
                 <Route path="/dashboard" element={<LazyDashboardLanding />}>
-                    <Route path="/dashboard/home" element={<LazyHomeLanding />} />
+                    <Route path="/dashboard/home" element={<LazyBody />} />
+                    
 
                 </Route>
 
