@@ -6,7 +6,7 @@ const DashboardLanding = () => {
   return (
     <>
       <Sidebar />
-      <div className="w-full h-screen pl-96 bg-amber-300">
+      <div className="w-full h-screen pl-96 bg-amber-100">
         <Outlet />
       </div>
     </>

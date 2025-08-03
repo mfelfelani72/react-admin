@@ -1,8 +1,6 @@
 import React, { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import Landing from "./Landing.jsx";
-
 // just for test
 // const Test = lazy(() => import("../../components/TestCode.jsx"));
 
@@ -15,6 +13,14 @@ const LazyDashboardLanding = lazy(() =>
 
 const LazyBody = lazy(() =>
     import("../../features/dashboard/components/Body.jsx")
+);
+
+const LazyCourses = lazy(() =>
+    import("../../features/dashboard/components/Courses.jsx")
+);
+
+const LazySettings = lazy(() =>
+    import("../../features/dashboard/components/Settings.jsx")
 );
 
 
@@ -40,8 +46,8 @@ const Content = () => {
                 {/* Dashboard */}
                 <Route path="/dashboard" element={<LazyDashboardLanding />}>
                     <Route path="/dashboard/home" element={<LazyBody />} />
-                    
-
+                    <Route path="/dashboard/courses" element={<LazyCourses />} />
+                    <Route path="/dashboard/settings" element={<LazySettings />} />
                 </Route>
 
 
