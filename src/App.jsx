@@ -1,7 +1,7 @@
 import React, { useEffect, lazy, Suspense } from "react";
 
 // Functions
-// import prepareApp from "../../../../utils/lib/prepareApp.js";
+import prepareApp from "./app/utils/libs/prepareApp.js";
 
 // Components
 import LoaderPage from "./app/components/LoaderPage.jsx";
@@ -10,7 +10,7 @@ const Landing = lazy(() => import("./app/containers/Landing.jsx"));
 
 const App = () => {
   useEffect(() => {
-    // prepareApp();
+    prepareApp();
   }, []);
 
   return (
