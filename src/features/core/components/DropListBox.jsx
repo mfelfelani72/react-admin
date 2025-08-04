@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // Components
 
@@ -6,9 +7,11 @@ import { AngleIcon } from "./Icon.jsx";
 
 // Functions
 
-import { cn } from "../../../utils/libs/cn";
+import { cn } from "../../../../utils/libs/cn.js";
 
 const DropListBox = ({ className, ...props }) => {
+  // hooks
+  const {t} = useTranslation()
   return (
     <>
       <div
@@ -19,7 +22,7 @@ const DropListBox = ({ className, ...props }) => {
       >
         <div className="flex flex-row gap-2">
           <div>{props?.icon}</div>
-          <div>{props?.title}</div>
+          <div>{t(props?.title)}</div>
         </div>
         <div><AngleIcon /></div>
       </div>

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // Functions
 
-import { cn } from "../../utils/libs/cn";
+import { cn } from "../../../utils/libs/cn";
 
 const LoaderPage = ({ className, ...props }) => {
   // hook
