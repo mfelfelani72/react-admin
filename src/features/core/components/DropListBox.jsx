@@ -11,12 +11,13 @@ import { cn } from "../../../../utils/libs/cn.js";
 
 const DropListBox = ({ className, ...props }) => {
   // hooks
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   return (
     <>
       <div
+        {...props}
         className={cn(
-          "flex flex-row justify-between hover:bg-blue-100 rounded-lg cursor-pointer select-none px-4 py-2 hover:text-blue-500 transition-all ease-in-out",
+          "flex flex-row items-center justify-between hover:bg-blue-100 rounded-lg cursor-pointer select-none px-4 py-2 hover:text-blue-500 transition-all ease-in-out",
           className
         )}
       >
@@ -24,7 +25,9 @@ const DropListBox = ({ className, ...props }) => {
           <div>{props?.icon}</div>
           <div>{t(props?.title)}</div>
         </div>
-        <div><AngleIcon /></div>
+        <div>
+          <AngleIcon />
+        </div>
       </div>
     </>
   );

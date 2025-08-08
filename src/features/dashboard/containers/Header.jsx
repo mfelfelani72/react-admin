@@ -22,7 +22,7 @@ const Header = () => {
   const [userSettingVisible, setUserSettingVisible] = useState(false);
   return (
     <>
-      <div className="w-[calc(100vw-16rem)] bg-gray-50 py-4 px-8 flex flex-row justify-between items-center border-b border-gray-300">
+      <div className="fixed w-[calc(100vw-16rem)] bg-white py-4 px-8 flex flex-row justify-between items-center border-b border-gray-300">
         {/* search */}
         <div className="w-96">
           <InputSearch placeholder={"search..."} />
@@ -140,7 +140,7 @@ const Header = () => {
           >
             <UserSettingIcon />
           </div>
-          {!userSettingVisible && (
+          {userSettingVisible && (
             <div className="absolute top-15 right-4 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl select-none">
               <div className="flex flex-col border-b border-gray-300">
                 <div className="flex flex-row gap-4 items-center pb-4">

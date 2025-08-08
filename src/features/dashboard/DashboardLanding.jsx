@@ -13,9 +13,11 @@ const DashboardLanding = () => {
   return (
     <>
       <Sidebar />
-      <div className="w-full h-screen ml-[16rem] bg-amber-100">
+      <div className="w-[calc(100vw-16rem)] ml-[16rem]">
         <Header />
-        <Outlet />
+        <div className="mt-[4.5rem] bg-blue-50 min-h-[calc(100vh-4.5rem)] p-5">
+          <Outlet />
+        </div>
       </div>
     </>
   );
