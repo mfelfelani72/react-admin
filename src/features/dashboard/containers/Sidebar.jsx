@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="w-[16rem] h-screen fixed bg-gray-100 flex flex-col p-5">
+      <div className="w-[16rem] h-screen fixed bg-gray-100 flex flex-col p-5 border-x border-gray-300">
         <DropListBox icon={"X"} title={"student"} />
         <DropListBox icon={"X"} title={"student"} />
         <DropListBox icon={"X"} title={"student"} />
