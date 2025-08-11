@@ -84,6 +84,7 @@ const Languages = ({ className, ...props }) => {
                 setSortRadio={setLanguage}
                 index={item?.id}
                 checked={languageApp == item?.id}
+                onChange={()=>{}}
                 className={"bg-neutral-100"}
               />
             </div>
