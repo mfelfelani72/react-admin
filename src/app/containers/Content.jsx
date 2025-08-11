@@ -11,17 +11,10 @@ const LazyDashboardLanding = lazy(() =>
     import("../../features/dashboard/DashboardLanding.jsx")
 );
 
-const LazyBody = lazy(() =>
-    import("../../features/dashboard/components/Body.jsx")
+const LazyPostsLists = lazy(() =>
+    import("../../features/posts/containers/PostLists.jsx")
 );
 
-const LazyCourses = lazy(() =>
-    import("../../features/dashboard/components/Courses.jsx")
-);
-
-const LazySettings = lazy(() =>
-    import("../../features/dashboard/components/Settings.jsx")
-);
 
 
   
@@ -45,9 +38,8 @@ const Content = () => {
 
                 {/* Dashboard */}
                 <Route path="/dashboard" element={<LazyDashboardLanding />}>
-                    <Route path="/dashboard/home" element={<LazyBody />} />
-                    <Route path="/dashboard/courses" element={<LazyCourses />} />
-                    <Route path="/dashboard/settings" element={<LazySettings />} />
+                    <Route path="/dashboard/posts" element={<LazyPostsLists />} />
+                  
                 </Route>
 
 
