@@ -2042,6 +2042,50 @@ export const USIcon = ({ className, ...props }) => {
     </>
   );
 };
+export const ListIcon = ({ className, ...props }) => {
+  return (
+    <>
+      <svg
+        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M11 9h6m-6 3h6m-6 3h6M6.996 9h.01m-.01 3h.01m-.01 3h.01M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+        />
+      </svg>
+    </>
+  );
+};
+export const PostsIcon = ({ className, ...props }) => {
+  return (
+    <>
+      <svg
+        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M20 14H4m6.5 3L8 20m5.5-3 2.5 3M4.88889 17H19.1111c.4909 0 .8889-.4157.8889-.9286V4.92857C20 4.41574 19.602 4 19.1111 4H4.88889C4.39797 4 4 4.41574 4 4.92857V16.0714c0 .5129.39797.9286.88889.9286ZM13 14v-3h4v3h-4Z"
+        />
+      </svg>
+    </>
+  );
+};
 
 export const AngleIcon = ({ className, ...props }) => {
   return (

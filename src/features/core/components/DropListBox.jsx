@@ -34,7 +34,12 @@ const DropListBox = ({ className, ...props }) => {
             <div>{t(props?.title)}</div>
             {/* translation remember */}
           </div>
-          <div className={cn("transition duration-400 rtl:rotate-180",isOpen && "ltr:rotate-90 rtl:rotate-90")}>
+          <div
+            className={cn(
+              "transition duration-400 rtl:rotate-180",
+              isOpen && "ltr:rotate-90 rtl:rotate-90"
+            )}
+          >
             <AngleIcon />
           </div>
         </div>
@@ -52,11 +57,17 @@ const DropListBox = ({ className, ...props }) => {
                   onClick={() => {
                     navigate(item?.link);
                   }}
-                  className="p-1 py-1 hover:text-blue-500 cursor-pointer select-none"
+                  className="p-1 py-1 cursor-pointer select-none"
                 >
                   <div className="flex flex-row items-center gap-2">
                     <div>{item?.icon}</div>
-                    <div>{t(item?.name)}</div>
+                    <div
+                      className={cn(
+                        "transition text-xs font-medium text-gray-600 hover:text-blue-500"
+                      )}
+                    >
+                      {t(item?.name)}
+                    </div>
                   </div>
                 </li>
               ))}

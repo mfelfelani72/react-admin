@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Components
 
 import DropListBox from "../../core/components/DropListBox";
-import { DashboardIcon } from "../../core/components/Icon";
+import { DashboardIcon, ListIcon, PostsIcon } from "../../core/components/Icon";
 
 const Sidebar = () => {
   // hooks
@@ -19,18 +19,13 @@ const Sidebar = () => {
         </div>
         <div className="flex flex-col py-4">
           <DropListBox
-            icon={<DashboardIcon />}
+            icon={<PostsIcon />}
             title={"posts"}
             items={[
               {
                 name: "posts_list",
-                icon: <DashboardIcon className={"w-5 h-5"} />,
+                icon: <ListIcon className={"w-5 h-5"} />,
                 link: "/dashboard/posts",
-              },
-              {
-                name: "name2",
-                icon: <DashboardIcon className={"w-5 h-5"} />,
-                link: "link2",
               },
             ]}
           />
