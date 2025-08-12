@@ -66,7 +66,7 @@ const Languages = ({ className, ...props }) => {
   }, [language]);
   return (
     <>
-      <div className="absolute top-15 ltr:right-19 rtl:left-19 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl">
+      <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl">
         {languageList?.map((item, index) => (
           <div key={index} className="flex flex-row justify-between w-48">
             <div className="flex flex-row gap-2 items-center">
