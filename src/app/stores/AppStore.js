@@ -16,13 +16,16 @@ const useAppStore = create((set) => ({
   themeApp: localStorage.getItem("theme") || "light",
   setThemeApp: (status) => set({ themeApp: status }),
 
+  themeColor: localStorage.getItem("themeColor") || "blue-theme",
+  setThemeColor: (status) => set({ themeColor: status }),
+
   sendRequest: false,
   setSendRequest: (status) => set({ sendRequest: status }),
 
   backAddress: "/landing",
   setBackAddress: (status) => set({ backAddress: status }),
 
-  titlePage: "aimoonhub",
+  titlePage: "dashboard",
   setTitlePage: (status) => set({ titlePage: status }),
 }));
 

@@ -13,12 +13,23 @@ import Languages from "../components/Languages.jsx";
 import GhostBox from "../../core/components/GhostBox/GhostBox.jsx";
 import UserSetting from "./UserSetting.jsx";
 
+// Functions
+
+import { cn } from "../../../../utils/libs/cn.js";
+
+// Zustand
+
+import useAppStore from "../../../app/stores/AppStore.js";
+
 const Header = () => {
   // hooks
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+
+  // states
+  const themeColor = useAppStore((state) => state.themeColor);
   return (
     <>
-      <div className="fixed w-[calc(100vw-16rem)] bg-white py-4 px-8 flex flex-row justify-between items-center border-b border-gray-300">
+      <div className="fixed w-[calc(100vw-16rem)] bg-Background-light dark:bg-Background-dark py-4 px-8 flex flex-row justify-between items-center border-b border-Line-light dark:border-Line-dark">
         {/* search */}
         <div className="w-96">
           <InputSearch placeholder={t("search")} />
@@ -32,7 +43,7 @@ const Header = () => {
             className={"bottom-5"}
             gap={16}
             trigger={
-              <div className="elative bg-blue-200 w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
+              <div className="elative bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
                 <UserSettingIcon />
               </div>
             }
@@ -48,8 +59,8 @@ const Header = () => {
             className={"bottom-5"}
             gap={16}
             trigger={
-              <div className="bg-blue-200 w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
-                <LanguageIcon className={"text-gray-600"} />
+              <div className="bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
+                <LanguageIcon />
               </div>
             }
             triggerClassName={""}
@@ -64,11 +75,21 @@ const Header = () => {
             className={"bottom-5"}
             gap={16}
             trigger={
-              <div className="relative bg-blue-200 w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
-                <div className="absolute top-2 right-2 rounded-full w-2 h-2 bg-red-500 "></div>
-                <div className="absolute top-1.5 right-1.5 rounded-full w-3 h-3 bg-red-500 animate-ping"></div>
+              <div className="relative bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
+                <div
+                  className={cn(
+                    "absolute top-2 right-2 rounded-full w-2 h-2",
+                    "bg-" + themeColor
+                  )}
+                ></div>
+                <div
+                  className={cn(
+                    "absolute top-1.5 right-1.5 rounded-full w-3 h-3 animate-ping",
+                    "bg-" + themeColor
+                  )}
+                ></div>
                 <div className="">
-                  <BellIcon className={"text-gray-600"} />
+                  <BellIcon />
                 </div>
               </div>
             }

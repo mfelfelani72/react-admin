@@ -47,18 +47,60 @@
   --color-Neutral-50: rgba(242, 242, 243, 1);
 
   /* HoverFocus */
-  --color-HoverFocus-dark-600: rgba(255,255,255,0.1);
-  --color-HoverFocus-dark-500: rgba(255,255,255,0.09);
-  --color-HoverFocus-dark-400: rgba(255,255,255,0.08);
-  --color-HoverFocus-dark-300: rgba(255,255,255,0.07);
-  --color-HoverFocus-dark-200: rgba(255,255,255,0.06);
-  --color-HoverFocus-dark-100: rgba(255,255,255,0.05);
-  
-  --color-HoverFocus-light-600: rgba(0,0,0,0.1);
-  --color-HoverFocus-light-500: rgba(0,0,0,0.09);
-  --color-HoverFocus-light-400: rgba(0,0,0,0.08);
-  --color-HoverFocus-light-300: rgba(0,0,0,0.07);
-  --color-HoverFocus-light-200: rgba(0,0,0,0.06);
-  --color-HoverFocus-light-100: rgba(0,0,0,0.05);
+  --color-HoverFocus-dark-600: rgba(255, 255, 255, 0.1);
+  --color-HoverFocus-dark-500: rgba(255, 255, 255, 0.09);
+  --color-HoverFocus-dark-400: rgba(255, 255, 255, 0.08);
+  --color-HoverFocus-dark-300: rgba(255, 255, 255, 0.07);
+  --color-HoverFocus-dark-200: rgba(255, 255, 255, 0.06);
+  --color-HoverFocus-dark-100: rgba(255, 255, 255, 0.05);
 
+  --color-HoverFocus-light-600: rgba(0, 0, 0, 0.1);
+  --color-HoverFocus-light-500: rgba(0, 0, 0, 0.09);
+  --color-HoverFocus-light-400: rgba(0, 0, 0, 0.08);
+  --color-HoverFocus-light-300: rgba(0, 0, 0, 0.07);
+  --color-HoverFocus-light-200: rgba(0, 0, 0, 0.06);
+  --color-HoverFocus-light-100: rgba(0, 0, 0, 0.05);
+
+  /* Disable */
+  --color-Disable-dark: rgba(255, 255, 255, 0.3);
+
+  --color-Disable-light: rgba(0, 0, 0, 0.26);
+
+  /* Shadows */
+  --color-Shadows-dark-200: rgba(0, 0, 0, 0.6);
+  --color-Shadows-dark-100: rgba(0, 0, 0, 0.4);
+
+  --color-Shadows-light-200: rgba(0, 0, 0, 0.2);
+  --color-Shadows-light-100: rgba(0, 0, 0, 0.1);
+
+  /* Icon */
+
+  --color-Icon-dark: rgba(255, 255, 255, 0.7);
+  --color-Icon-light: rgba(0, 0, 0, 0.7);
+
+  /* theme */
+
+  --color-blue-theme: rgba(58, 123, 255, 1);
+  --color-orange-theme: rgba(255, 152, 0, 1);
+  --color-purple-theme: rgba(156, 39, 176, 1);
+  --color-green-theme: rgba(76, 175, 80, 1);
+  --color-red-theme: rgba(244, 67, 54, 1);
+  --color-yellow-theme: rgba(255, 235, 59, 1);
+  --color-turquoise-theme: rgba(0, 188, 212, 1);
+
+  --color-Background-dark: rgba(25, 30, 40, 1);
+  --color-BackgroundSecondary-dark: rgba(35, 42, 55, 1);
+  --color-BackgroundSection-dark: rgba(45, 54, 70, 1);
+  --color-Text-dark: rgba(230, 235, 240, 1);
+  --color-TextSecondary-dark: rgba(170, 180, 190, 1);
+  --color-Text-Disable-dark: rgba(100, 110, 120, 1);
+  --color-Line-dark: rgba(55, 65, 80, 1);
+
+  --color-Background-light: rgba(245, 248, 250, 1);
+  --color-BackgroundSecondary-light: rgba(235, 240, 245, 1);
+  --color-BackgroundSection-light: rgba(225, 232, 240, 1);
+  --color-Text-light: rgba(30, 40, 50, 1);
+  --color-TextSecondary-light: rgba(70, 85, 100, 1);
+  --color-Text-Disable-light: rgba(140, 150, 160, 1);
+  --color-Line-light: rgba(210, 220, 230, 1);
 }

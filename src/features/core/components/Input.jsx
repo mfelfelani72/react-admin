@@ -378,11 +378,11 @@ export const InputSearch = ({ className, ...props }) => {
         type="text"
         id={props?.id}
         className={cn(
-          `autofill-input w-full bg-blue-100 dark:bg-background-light text-neutral-600 dark:text-neutral-100 rounded-3xl ${
+          `autofill-input w-full bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark text-Text-light dark:text-Text-dark rounded-3xl ${
             props?.param
               ? "rtl:pr-11 rtl:pl-12 ltr:pl-11 ltr:pr-12"
               : "rtl:pr-11 ltr:pl-11"
-          } h-11 border-none focus-visible:outline focus-visible:outline-white`,
+          } h-11 border-none focus-visible:outline focus-visible:outline-HoverFocus-light-600 dark:focus-visible:outline-HoverFocus-dark-600`,
           className
         )}
       />

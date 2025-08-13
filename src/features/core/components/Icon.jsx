@@ -6,7 +6,7 @@ export const CloseSquareIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 20 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export const ShowIcon = ({ className, ...props }) => {
     <>
       <svg
         className={cn(
-          "text-gray-500 dark:text-white w-6 h-6 cursor-pointer",
+          "text-Icon-light dark:text-Icon-dark w-6 h-6 cursor-pointer",
           className
         )}
         viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ export const HideIcon = ({ className, ...props }) => {
     <>
       <svg
         className={cn(
-          "text-gray-500 dark:text-white w-6 h-6 cursor-pointer",
+          "text-Icon-light dark:text-Icon-dark w-6 h-6 cursor-pointer",
           className
         )}
         viewBox="0 0 24 24"
@@ -158,7 +158,7 @@ export const LockIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +194,7 @@ export const EmailIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +223,7 @@ export const MobielIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 22 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -279,7 +279,7 @@ export const StarIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-8 h-8", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-8 h-8", className)}
         viewBox="0 0 31 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -315,7 +315,7 @@ export const LocationIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -353,7 +353,7 @@ export const LanguageIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +370,7 @@ export const SearchIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -401,7 +401,7 @@ export const BellIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -422,7 +422,7 @@ export const UserIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -443,7 +443,7 @@ export const SettingIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -471,7 +471,7 @@ export const UserSettingIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -492,7 +492,7 @@ export const DashboardIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -514,7 +514,7 @@ export const IranIcon = ({ className, ...props }) => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 32 32"
       >
         <path fill="#fff" d="M1 11H31V21H1z"></path>
@@ -561,7 +561,7 @@ export const USIcon = ({ className, ...props }) => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         viewBox="0 0 32 32"
       >
         <rect
@@ -682,7 +682,7 @@ export const ListIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -705,7 +705,7 @@ export const PostsIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("text-gray-500 dark:text-white w-6 h-6", className)}
+        className={cn("text-Icon-light dark:text-Icon-dark w-6 h-6", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -726,7 +726,7 @@ export const AngleIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("w-4 h-4 text-gray-500 dark:text-white")}
+        className={cn("w-4 h-4 text-Icon-light dark:text-Icon-dark")}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -747,7 +747,7 @@ export const ThemeIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("w-6 h-6 text-gray-500 dark:text-white", className)}
+        className={cn("w-6 h-6 text-Icon-light dark:text-Icon-dark", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -774,7 +774,7 @@ export const HomeIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-        className={cn("w-6 h-6 text-gray-500 dark:text-white", className)}
+        className={cn("w-6 h-6 text-Icon-light dark:text-Icon-dark", className)}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
