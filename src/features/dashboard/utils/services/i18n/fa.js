@@ -5,10 +5,14 @@ const fa = {
   // header
   search: "جستجو",
   notification: "پیام ها",
+  account_setting: "تنظیمات اکانت",
+  dark_light: "روشن / تیره",
+  color: "رنگ",
+  log_out: "خروج",
 
-   // language
+  // language
   persion: "فارسی",
-  english:"انگلیسی",
+  english: "انگلیسی",
 };
 
 export default fa;
