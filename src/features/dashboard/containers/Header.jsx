@@ -96,8 +96,8 @@ const Header = () => {
             triggerClassName={""}
             childrenClassName={""}
           >
-            <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl whitespace-nowrap">
-              {t("notification")}
+            <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-Background-light dark:bg-Background-dark z-[20] p-5 border border-Line-light dark:border-Line-dark rounded-xl whitespace-nowrap">
+              <span className="text-Text-light dark:text-Text-Disable-dark">{t("notification")}</span>
             </div>
           </GhostBox>
         </div>

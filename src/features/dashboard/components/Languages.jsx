@@ -66,16 +66,16 @@ const Languages = ({ className, ...props }) => {
   }, [language]);
   return (
     <>
-      <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl">
+      <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-Background-light dark:bg-Background-dark z-[20] p-5 border border-Line-light dark:border-Line-dark rounded-xl">
         {languageList?.map((item, index) => (
           <div key={index} className="flex flex-row justify-between w-48">
             <div className="flex flex-row gap-2 items-center">
-              <div className="relative w-10 h-10 rounded-full border border-gray-300 overflow-hidden">
+              <div className="relative w-10 h-10 rounded-full border dark:border-Line-light border-Line-dark overflow-hidden">
                 <div className="absolute top-[-0.65rem] right-[-0.675rem]">
                   {item?.flag}
                 </div>
               </div>
-              <div className="font-bold">{item?.name}</div>
+              <div className="font-bold text-TextSecondary-light dark:text-TextSecondary-dark">{item?.name}</div>
             </div>
             <div className="flex items-center">
               <InputRadioButton
@@ -85,7 +85,7 @@ const Languages = ({ className, ...props }) => {
                 index={item?.id}
                 checked={languageApp == item?.id}
                 onChange={()=>{}}
-                className={"bg-neutral-100"}
+                className={""}
               />
             </div>
           </div>

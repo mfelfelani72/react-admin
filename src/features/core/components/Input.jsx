@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // Components
@@ -614,6 +614,8 @@ export const InputDarkLight = ({ className, ...props }) => {
   );
 };
 export const InputRadioButton = ({ className, setSortRadio, ...props }) => {
+  // states
+  const themeColor = useAppStore((state) => state.themeColor);
   return (
     <>
       <input
@@ -629,7 +631,7 @@ export const InputRadioButton = ({ className, setSortRadio, ...props }) => {
             }
           : {})}
         className={cn(
-          "appearance-none w-5 h-5 transition-all bg-neutral-50 dark:bg-Neutral-50 border-gray-300 rounded cursor-pointer checked:bg-blue-400 checked:border-blue-400 focus:ring-0 focus:ring-offset-0 relative after:content-[''] after:absolute after:inset-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjIwIDYgOSAxNyA0IDEyIj48L3BvbHlsaW5lPjwvc3ZnPg==')] after:bg-no-repeat after:bg-center after:opacity-0 checked:after:opacity-100",
+          `appearance-none w-5 h-5 transition-all bg-BackgroundSection-light dark:bg-BackgroundSection-dark border-Line-light dark:border-Line-dark rounded cursor-pointer checked:bg-${themeColor} checked:border-${themeColor} focus:ring-0 focus:ring-offset-0 relative after:content-[''] after:absolute after:inset-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjIwIDYgOSAxNyA0IDEyIj48L3BvbHlsaW5lPjwvc3ZnPg==')] after:bg-no-repeat after:bg-center after:opacity-0 checked:after:opacity-100`,
           className
         )}
       />
