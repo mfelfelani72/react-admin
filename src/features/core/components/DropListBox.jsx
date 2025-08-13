@@ -10,6 +10,10 @@ import { AngleIcon } from "./Icon.jsx";
 
 import { cn } from "../../../../utils/libs/cn.js";
 
+// Zustand
+
+import useAppStore from "../../../app/stores/AppStore.js";
+
 const DropListBox = ({ className, ...props }) => {
   // hooks
   const { t } = useTranslation();
@@ -17,6 +21,9 @@ const DropListBox = ({ className, ...props }) => {
   const location = useLocation();
 
   // states and consts
+
+  const themeColor = useAppStore((state) => state.themeColor);
+
   const [isOpen, setIsOpen] = useState(false);
 
   // Check if any child is active
@@ -55,10 +62,10 @@ const DropListBox = ({ className, ...props }) => {
         id={props?.id}
         onClick={handleParentClick}
         className={cn(
-          "flex flex-row items-center justify-between rounded-lg cursor-pointer select-none px-4 py-2 transition-all ease-in-out",
-          "hover:text-blue-500",
+          "flex flex-row items-center justify-between rounded-lg cursor-pointer select-none px-2 py-2 transition-all ease-in-out",
+          `hover:text-${themeColor}`,
           className,
-          shouldHighlight && "text-blue-500 bg-blue-100"
+          shouldHighlight ? `text-Text-light dark:text-Text-dark bg-HoverFocus-light-100 dark:bg-HoverFocus-dark-400` : "text-Text-light dark:text-Text-dark"
         )}
       >
         <div className="flex flex-row gap-2">
@@ -72,7 +79,7 @@ const DropListBox = ({ className, ...props }) => {
               isOpen && "ltr:rotate-90 rtl:rotate-90"
             )}
           >
-            <AngleIcon />
+            <AngleIcon className={`text-${themeColor} dark:text-${themeColor}`}/>
           </div>
         )}
       </div>
@@ -81,8 +88,8 @@ const DropListBox = ({ className, ...props }) => {
       {props?.items && (
         <div
           className={cn(
-            "px-4 h-1 transition-all ease-in duration-150 opacity-0 pointer-events-none",
-            isOpen && "h-full ml-3 opacity-100 pointer-events-auto"
+            "h-1 transition-all ease-in duration-150 opacity-0 pointer-events-none",
+            isOpen && "h-full mx-0.5 opacity-100 pointer-events-auto"
           )}
         >
           <ul>
@@ -95,10 +102,10 @@ const DropListBox = ({ className, ...props }) => {
                 <div
                   className={cn(
                     "flex flex-row items-center gap-2 px-2 py-1 rounded-md",
-                    "hover:text-blue-500",
+                    `hover:text-${themeColor}`,
                     location.pathname === item.link
-                      ? "text-blue-500"
-                      : "text-gray-600"
+                      ? `text-${themeColor}`
+                      : "text-TextSecondary-light dark:text-TextSecondary-dark"
                   )}
                 >
                   <div>{item?.icon}</div>
