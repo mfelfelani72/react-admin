@@ -1,7 +1,7 @@
 // Components
 
 import DropListBox from "../../core/components/DropListBox";
-import { DashboardIcon, ListIcon, PostsIcon } from "../../core/components/Icon";
+import { DashboardIcon, HomeIcon, ListIcon, PostsIcon } from "../../core/components/Icon";
 
 const Sidebar = () => {
 
@@ -15,7 +15,7 @@ const Sidebar = () => {
         <DropListBox 
           id={"home"} 
           to="/home" 
-          icon={<PostsIcon />} 
+          icon={<HomeIcon />} 
           title={"home"}
         />
         <DropListBox

@@ -743,11 +743,11 @@ export const AngleIcon = ({ className, ...props }) => {
     </>
   );
 };
-export const ThemeIcon = ({ className,...props }) => {
+export const ThemeIcon = ({ className, ...props }) => {
   return (
     <>
       <svg
-       className={cn("w-6 h-6 text-gray-500 dark:text-white",className)}
+        className={cn("w-6 h-6 text-gray-500 dark:text-white", className)}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -765,6 +765,27 @@ export const ThemeIcon = ({ className,...props }) => {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
+        />
+      </svg>
+    </>
+  );
+};
+export const HomeIcon = ({ className, ...props }) => {
+  return (
+    <>
+      <svg
+        className={cn("w-6 h-6 text-gray-500 dark:text-white", className)}
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
         />
       </svg>
     </>
