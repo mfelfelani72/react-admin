@@ -2,7 +2,147 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+  /* persion */
+
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight: 100;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Thin.TTF');
+      font-display: swap;
+  } */
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Light.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Regular.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Medium.otf");
+    font-display: swap;
+  }
+
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight:600;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Semi_Bold.TTF');
+      font-display: swap;
+  } */
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Bold.otf");
+    font-display: swap;
+  }
+
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight: 800;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Extra_Bold.TTF');
+      font-display: swap;
+  } */
+
+  /* english */
+
+  /* SpaceGrotesk */
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Light.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Regular.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Medium.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 600;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-SemiBold.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Bold.ttf");
+    font-display: swap;
+  }
+
+  /* Satoshi */
+  @font-face {
+    font-family: satoshi;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/Satoshi-Light.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: satoshi;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/Satoshi-Regular.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: satoshi;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/Satoshi-Medium.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: satoshi;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/Satoshi-Bold.otf");
+    font-display: swap;
+  }
+}
+
 @theme {
+ /* Fonts */
+
+  --font-yekanBakh: yekanBakh;
+  --font-satoshi: satoshi;
+
   /* colors */
 
   /* Primary */

@@ -17,7 +17,7 @@ const App = () => {
     <>
       <Suspense
         fallback={
-          <LoaderPage className={"h-screen bg-white dark:bg-background"} />
+          <LoaderPage className={"h-screen bg-Background-light dark:bg-Background-dark"} />
         }
       >
         <Landing />

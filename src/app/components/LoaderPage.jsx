@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -6,14 +5,20 @@ import { useTranslation } from "react-i18next";
 
 import { cn } from "../../../utils/libs/cn";
 
+// Zustand
+
+import useAppStore from "../stores/AppStore";
+
 const LoaderPage = ({ className, ...props }) => {
   // hook
-
   const { t } = useTranslation();
+
+  // states and consts
+  const themeColor = useAppStore((state) => state.themeColor);
 
   const words = props?.words
     ? props?.words
-    : [t(" "), t("aimoonhub"), t("coin"), t("sentiment"), t("news")];
+    : [t("point"), t("point"), t("point"), t("point"), t("point")];
 
   return (
     <div
@@ -22,7 +27,7 @@ const LoaderPage = ({ className, ...props }) => {
         className
       )}
     >
-      <div className="text-gray-400 font-medium text-xl md:text-2xl h-10 py-2.5 px-2.5 flex items-center  text-center">
+      <div className="text-Text-light dark:text-Text-Disable-dark font-medium text-xl md:text-2xl h-10 py-2.5 px-2.5 flex items-center  text-center">
         <p className="capitalize">
           {props?.title ? props?.title : t("loading")}
         </p>
@@ -32,7 +37,11 @@ const LoaderPage = ({ className, ...props }) => {
           {/* <!-- Words container with animation --> */}
 
           {props?.notFound ? (
-            <span className="block h-10 pl-1.5 text-purple-400 dark:text-primary-400 capitalize pt-1">
+            <span
+              className={cn(
+                `block h-10 pl-1.5 text-${themeColor} dark:text-${themeColor} capitalize pt-1`
+              )}
+            >
               {props?.notFound}
             </span>
           ) : (
@@ -44,9 +53,11 @@ const LoaderPage = ({ className, ...props }) => {
               {words?.map((word, index) => (
                 <span
                   key={index}
-                  className={`block h-10 ${
-                    words[0] !== "point" && "pl-1.5"
-                  }   text-purple-400 dark:text-primary-400 capitalize`}
+                  className={cn(
+                    `block h-10 ${
+                      words[0] !== "point" && "pl-1.5"
+                    }   text-${themeColor} dark:text-${themeColor} capitalize`
+                  )}
                 >
                   {word !== "point" ? word : "...  "}
                 </span>

@@ -595,7 +595,7 @@ export const InputDarkLight = ({ className, ...props }) => {
         checked={!isDark}
         onChange={() => {}}
       />
-      <div className="relative w-[4rem] h-[2rem] peer-checked:bg-white bg-background rounded-full after:absolute after:content-[''] after:w-[1.5rem] after:h-[1.5rem] after:rounded-full after:top-[0.25rem] after:left-[0.25rem] after:bg-[linear-gradient(to_right,_#444350,_#444350)] peer-checked:after:bg-[linear-gradient(to_right,_#f97316,_#facc15)] active:after:w-[1.875rem] peer-checked:after:left-[3.75rem] peer-checked:after:translate-x-[-100%] shadow-sm duration-500 after:duration-500 after:shadow-md"></div>
+      <div className="relative w-[4rem] h-[2rem] peer-checked:bg-white bg-HoverFocus-dark-100 rounded-full after:absolute after:content-[''] after:w-[1.5rem] after:h-[1.5rem] after:rounded-full after:top-[0.25rem] after:left-[0.25rem] after:bg-[linear-gradient(to_right,_#444350,_#444350)] peer-checked:after:bg-[linear-gradient(to_right,_#f97316,_#facc15)] active:after:w-[1.875rem] peer-checked:after:left-[3.75rem] peer-checked:after:translate-x-[-100%] shadow-sm duration-500 after:duration-500 after:shadow-md"></div>
 
       <MoonIcon
         width={"1.25rem"}
