@@ -1,24 +1,22 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+// Layouts
 
-// Components
+import DashboardLandingMobile from "./layouts/mobile/DashboardLanding.jsx"
+import DashboardLandingIpad from "./layouts/ipad/DashboardLanding.jsx"
+import DashboardLandingDesktop from "./layouts/desktop/DashboardLanding.jsx"
 
-import Sidebar from "./containers/Sidebar";
+// Hooks
 
-// Containers
-
-import Header from "./containers/Header";
+import useDevice from "../../../utils/hooks/useDevice.js";
 
 const DashboardLanding = () => {
+  // hooks
+  const { type, orientation, screenWidth, isMobile, isIpad, isDesktop } =
+    useDevice();
   return (
     <>
-      <Sidebar />
-      <div className="w-[calc(100vw-16rem)] ltr:ml-[16rem] rtl:mr-[16rem]">
-        <Header />
-        <div className="mt-[4.5rem] bg-blue-50 dark:bg-gray-700 min-h-[calc(100vh-4.5rem)] p-5">
-          <Outlet />
-        </div>
-      </div>
+      {isMobile && <DashboardLandingMobile />}
+      {isIpad && <DashboardLandingIpad />}
+      {isDesktop && <DashboardLandingDesktop />}
     </>
   );
 };
