@@ -1,3 +1,64 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* colors */
+
+  /* Primary */
+  --color-Primary-600: rgba(42, 93, 230, 1);
+  --color-Primary-500: rgba(58, 123, 255, 1);
+  --color-Primary-400: rgba(90, 155, 255, 1);
+  --color-Primary-300: rgba(122, 179, 255, 1);
+  --color-Primary-200: rgba(180, 210, 255, 1);
+  --color-Primary-100: rgba(220, 235, 255, 1);
+
+  /* Success */
+  --color-Success-600: rgba(56, 142, 60, 1);
+  --color-Success-500: rgba(76, 175, 80, 1);
+  --color-Success-400: rgba(102, 187, 106, 1);
+  --color-Success-300: rgba(129, 199, 132, 1);
+  --color-Success-200: rgba(65, 214, 167, 1);
+  --color-Success-100: rgba(200, 230, 201, 1);
+
+  /* Error */
+  --color-Error-600: rgba(229, 57, 53, 1);
+  --color-Error-500: rgba(244, 67, 54, 1);
+  --color-Error-400: rgba(239, 83, 80, 1);
+  --color-Error-300: rgba(229, 115, 115, 1);
+  --color-Error-200: rgba(239, 154, 154, 1);
+  --color-Error-100: rgba(255, 205, 210, 1);
+
+  /* Warning */
+  --color-Warning-600: rgba(230, 145, 0, 1);
+  --color-Warning-500: rgba(255, 152, 0, 1);
+  --color-Warning-400: rgba(255, 167, 38, 1);
+  --color-Warning-300: rgba(255, 183, 77, 1);
+  --color-Warning-200: rgba(255, 204, 128, 1);
+  --color-Warning-100: rgba(255, 224, 178, 1);
+
+  /* Neutral */
+  --color-Neutral-600: rgba(10, 10, 15, 1);
+  --color-Neutral-500: rgba(31, 30, 46, 1);
+  --color-Neutral-400: rgba(76, 75, 88, 1);
+  --color-Neutral-300: rgba(121, 120, 130, 1);
+  --color-Neutral-200: rgba(165, 165, 171, 1);
+  --color-Neutral-100: rgba(210, 210, 213, 1);
+  --color-Neutral-50: rgba(242, 242, 243, 1);
+
+  /* HoverFocus */
+  --color-HoverFocus-dark-600: rgba(255,255,255,0.1);
+  --color-HoverFocus-dark-500: rgba(255,255,255,0.09);
+  --color-HoverFocus-dark-400: rgba(255,255,255,0.08);
+  --color-HoverFocus-dark-300: rgba(255,255,255,0.07);
+  --color-HoverFocus-dark-200: rgba(255,255,255,0.06);
+  --color-HoverFocus-dark-100: rgba(255,255,255,0.05);
+  
+  --color-HoverFocus-light-600: rgba(0,0,0,0.1);
+  --color-HoverFocus-light-500: rgba(0,0,0,0.09);
+  --color-HoverFocus-light-400: rgba(0,0,0,0.08);
+  --color-HoverFocus-light-300: rgba(0,0,0,0.07);
+  --color-HoverFocus-light-200: rgba(0,0,0,0.06);
+  --color-HoverFocus-light-100: rgba(0,0,0,0.05);
+
+}

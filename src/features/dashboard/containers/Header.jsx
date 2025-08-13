@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // Components
 
@@ -13,19 +14,21 @@ import GhostBox from "../../core/components/GhostBox/GhostBox.jsx";
 import UserSetting from "./UserSetting.jsx";
 
 const Header = () => {
+  // hooks
+  const {t} = useTranslation();
   return (
     <>
       <div className="fixed w-[calc(100vw-16rem)] bg-white py-4 px-8 flex flex-row justify-between items-center border-b border-gray-300">
         {/* search */}
         <div className="w-96">
-          <InputSearch placeholder={"search..."} />
+          <InputSearch placeholder={t("search")} />
         </div>
 
         <div className="flex flex-row-reverse">
           {/* user */}
 
           <GhostBox
-            id={"notification"}
+            id={"user-settings"}
             className={"bottom-5"}
             gap={16}
             trigger={
@@ -72,8 +75,8 @@ const Header = () => {
             triggerClassName={""}
             childrenClassName={""}
           >
-            <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl">
-              notification
+            <div className="absolute top-12 ltr:-right-7 rtl:-left-7 inline-flex flex-col gap-4 bg-white z-[20] p-5 border border-gray-300 rounded-xl whitespace-nowrap">
+              {t("notification")}
             </div>
           </GhostBox>
         </div>
