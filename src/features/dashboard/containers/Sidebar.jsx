@@ -18,14 +18,16 @@ const Sidebar = () => {
           <div className="text-2xl font-bold">Dashboard</div>
         </div>
         <div className="flex flex-col py-4">
+          <DropListBox id={"home"} to="/home" icon={<PostsIcon />} title={"home"} />
           <DropListBox
+            id={"posts"}
             icon={<PostsIcon />}
             title={"posts"}
             items={[
               {
                 name: "posts_list",
                 icon: <ListIcon className={"w-5 h-5"} />,
-                link: "/dashboard/posts",
+                link: "/posts",
               },
             ]}
           />

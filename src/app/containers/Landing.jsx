@@ -7,31 +7,29 @@ const Content = lazy(() => import("./Content.jsx"));
 
 // Functions
 
-// import Middleware from "../../middleware/Middleware";
+import Middleware from "../middleware/Middleware.js";
 
 const Landing = () => {
-    // hooks
-    // const navigate = useNavigate();
-    // const location = useLocation();
+  // hooks
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    // states
-    //   const [certificate, setCertificate] = useState();
+  // states
+  const [certificate, setCertificate] = useState();
 
-    //   useEffect(() => {
-    //     setCertificate(Middleware(location, navigate));
-    //   }, []);
+  useEffect(() => {
+    setCertificate(Middleware(location, navigate));
+  }, []);
 
-    return (
-        <div className="ltr:!font-satoshi rtl:!font-yekanBakh flex flex-col w-full h-full">
-            <div className="flex flex-col">
-                {/* {certificate === "app" && <Content />}
+  return (
+    <div className="ltr:!font-satoshi rtl:!font-yekanBakh flex flex-col w-full h-full">
+      <div className="flex flex-col">
+        {certificate === "app" && <Content />}
         {certificate === "404" && <div>404</div>}
-        {certificate === "403" && <div>403</div>} */}
-                <Content />
-              
-            </div>
-        </div>
-    );
+        {certificate === "403" && <div>403</div>}
+      </div>
+    </div>
+  );
 };
 
 export default Landing;

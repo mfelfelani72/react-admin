@@ -19,7 +19,11 @@ const DropListBox = ({ className, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="flex flex-col">
+      <div {...props} 
+      onClick={()=>{
+        !props?.items && navigate(props?.to)
+      }}
+      className="flex flex-col">
         <div
           id={props?.id}
           onClick={() => setIsOpen((prev) => !prev)}
@@ -34,19 +38,23 @@ const DropListBox = ({ className, ...props }) => {
             <div>{t(props?.title)}</div>
             {/* translation remember */}
           </div>
-          <div
-            className={cn(
-              "transition duration-400 rtl:rotate-180",
-              isOpen && "ltr:rotate-90 rtl:rotate-90"
-            )}
-          >
-            <AngleIcon />
-          </div>
+          {props?.items && (
+            <div
+              className={cn(
+                "transition duration-400 rtl:rotate-180",
+                isOpen && "ltr:rotate-90 rtl:rotate-90"
+              )}
+            >
+              <AngleIcon />
+            </div>
+          )}
         </div>
         <div
           className={cn(
             "px-4 h-1 transition-all ease-in duration-150 opacity-0 pointer-events-none",
-            isOpen && "h-full ml-3 opacity-100 pointer-events-auto"
+            isOpen &&
+              props?.items &&
+              "h-full ml-3 opacity-100 pointer-events-auto"
           )}
         >
           <ul>
