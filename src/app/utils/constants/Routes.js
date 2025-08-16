@@ -14,6 +14,7 @@ export const ALL_ROUTES = [
   "/register",
 
   // Posts
+  "/create-post",
   "/posts",
 ];
 

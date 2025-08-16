@@ -3,11 +3,15 @@ import { DashboardIcon } from "../../core/components/Icon";
 import TableCell from "../components/TableCell.jsx";
 import TableRow from "../components/TableRow.jsx";
 import Footer from "../components/Footer.jsx";
+import Table from "../../core/components/Table/Table.jsx"
 
 const PostLists = () => {
   return (
     <>
-      <div className="min-h-[calc(100vh-5.8rem)] flex flex-col overflow-hidden rounded-t-2xl">
+    <div>
+      <Table />
+    </div>
+      {/* <div className="min-h-[calc(100vh-5.8rem)] flex flex-col overflow-hidden rounded-t-2xl">
         <table className="flex-1 overflow-y-auto bg-white rounded-2xl">
           <colgroup>
             <col className="width-[52px]" />
@@ -57,7 +61,7 @@ const PostLists = () => {
           </tbody>
         </table>
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

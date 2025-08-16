@@ -26,6 +26,10 @@ const LazyPostsLists = lazy(() =>
   import("../../features/posts/containers/PostLists.jsx")
 );
 
+const LazyCreatePost = lazy(() =>
+  import("../../features/posts/containers/CreatePost.jsx")
+);
+
 const Content = () => {
   return (
     <>
@@ -40,7 +44,8 @@ const Content = () => {
 
         {/* Dashboard */}
         <Route path="/" element={<LazyDashboardLanding />}>
-          <Route path="/home" element={<LazyHomeLanding />}></Route>
+          <Route path="/home" element={<LazyHomeLanding />}/>
+          <Route path="/create-post" element={<LazyCreatePost />} />
           <Route path="/posts" element={<LazyPostsLists />} />
         </Route>
       </Routes>
