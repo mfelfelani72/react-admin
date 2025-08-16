@@ -40,8 +40,8 @@ const DropListBox = ({ className, ...props }) => {
         </div>
         <div
           className={cn(
-            "px-4 h-1 transition-all ease-in duration-150 opacity-0 pointer-events-none",
-            isOpen && "h-full ml-3 opacity-100 pointer-events-auto"
+            "px-4 h-[0] transition-all ease-in duration-150 pointer-events-none overflow-clip",
+            isOpen && "h-full pointer-events-auto"
           )}
         >
           <ul>
