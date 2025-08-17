@@ -13,10 +13,10 @@ const PostLists = () => {
       age: 28,
       job: "توسعه‌دهنده",
       city: "تهران",
-      country: "ایران",
-      score: 95,
-      status: "فعال",
-      date: "1402/05/15",
+      // country: "ایران",
+      // score: 95,
+      // status: "فعال",
+      // date: "1402/05/15",
     },
     {
       id: 2,
@@ -24,10 +24,10 @@ const PostLists = () => {
       age: 32,
       job: "طراح",
       city: "مشهد",
-      country: "ایران",
-      score: 88,
-      status: "غیرفعال",
-      date: "1402/04/22",
+      // country: "ایران",
+      // score: 88,
+      // status: "غیرفعال",
+      // date: "1402/04/22",
     },
     {
       id: 3,
@@ -35,16 +35,21 @@ const PostLists = () => {
       age: 45,
       job: "مدیر",
       city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: "فعال",
-      date: "1401/12/03",
+      // country: "آمریکا",
+      // score: 76,
+      // status: "فعال",
+      // date: "1401/12/03",
     },
   ];
   return (
     <>
-      <div>
-        <Table data={data} />
+      <div className="relative z-5">
+        <Table
+          data={data}
+          onDelete={(id) => console.log("Delete item with id:", id)}
+          onView={(item) => console.log("View item:", item)}
+          onEdit={(item) => console.log("Edit item:", item)}
+        />
       </div>
       {/* <div className="min-h-[calc(100vh-5.8rem)] flex flex-col overflow-hidden rounded-t-2xl">
         <table className="flex-1 overflow-y-auto bg-white rounded-2xl">

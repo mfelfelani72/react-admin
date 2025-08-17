@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const PerfectResponsiveTable = ({
+const Table = ({
   data = [],
   customColumnConfig = {},
   defaultSort = { key: "id", direction: "asc" },
+  onDelete = () => {},
+  onView = () => {},
+  onEdit = () => {},
 }) => {
   // states and constants and refs
 
@@ -14,10 +17,10 @@ const PerfectResponsiveTable = ({
   const [sortConfig, setSortConfig] = useState(defaultSort);
   const [searchTerm, setSearchTerm] = useState("");
   const [columnWidths, setColumnWidths] = useState({});
+  const [selectedRows, setSelectedRows] = useState([]);
   const tableRef = useRef(null);
   const firstColRef = useRef(null);
   const lastColRef = useRef(null);
-
 
   // functions
 
@@ -41,8 +44,25 @@ const PerfectResponsiveTable = ({
     });
   };
 
+  // handle row selection
+  const handleRowSelect = (rowId) => {
+    setSelectedRows(prev => 
+      prev.includes(rowId) 
+        ? prev.filter(id => id !== rowId) 
+        : [...prev, rowId]
+    );
+  };
 
-  // مرتب‌سازی داده‌ها
+  // handle select all rows
+  const handleSelectAll = () => {
+    if (selectedRows.length === displayData.length) {
+      setSelectedRows([]);
+    } else {
+      setSelectedRows(displayData.map(row => row.id));
+    }
+  };
+
+  // sort data
   const requestSort = (key) => {
     if (!columns.find((col) => col.key === key)?.sortable) return;
 
@@ -78,15 +98,13 @@ const PerfectResponsiveTable = ({
     });
   };
 
-
-
-  // آیکون مرتب‌سازی
+  // change icon while sorting
   const getSortIcon = (key) => {
     if (sortConfig.key !== key) return "↕";
     return sortConfig.direction === "asc" ? "↑" : "↓";
   };
 
-  // اگر داده‌ای وجود ندارد
+  // if the data was empty
   if (initialData.length === 0) {
     return (
       <div className="p-4 text-center text-gray-500">
@@ -95,9 +113,9 @@ const PerfectResponsiveTable = ({
     );
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     setColumns(generateColumns());
-  },[])
+  }, []);
 
   // apply filter
   useEffect(() => {
@@ -111,7 +129,7 @@ const PerfectResponsiveTable = ({
         tableRef.current &&
         firstColRef.current &&
         lastColRef.current &&
-        columns.length > 0
+        columns?.length > 0
       ) {
         const tableWidth = tableRef.current.offsetWidth;
         const firstColWidth = firstColRef.current.offsetWidth;
@@ -144,7 +162,7 @@ const PerfectResponsiveTable = ({
       className="w-full overflow-hidden rounded-lg shadow dark:shadow-gray-700"
       ref={tableRef}
     >
-      {/* جستجو */}
+      {/* search */}
       <div className="p-3 bg-gray-100 dark:bg-gray-700">
         <input
           type="text"
@@ -155,16 +173,51 @@ const PerfectResponsiveTable = ({
         />
       </div>
 
-      {/* جدول */}
+      {/* table */}
       <div className="flex w-full">
-        {/* ستون اول (ثابت) */}
+        {/* Checkbox column */}
+        <div
+          ref={firstColRef}
+          className="flex-shrink-0 sticky left-0 z-10 bg-white dark:bg-gray-800"
+          style={{ width: 50 }} // Fixed width for checkbox column
+        >
+          {/* Checkbox header */}
+          <div className="p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-r border-gray-200 dark:border-gray-600 sticky top-0 z-20">
+            <input
+              type="checkbox"
+              checked={selectedRows.length === displayData.length && displayData.length > 0}
+              onChange={handleSelectAll}
+              className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+            />
+          </div>
+
+          {/* Checkbox data */}
+          {displayData.map((item, index) => (
+            <div
+              key={`checkbox-${item.id || index}`}
+              className={`p-3 border-b border-r border-gray-200 dark:border-gray-600 dark:text-white ${
+                index % 2 === 0
+                  ? "bg-white dark:bg-gray-800"
+                  : "bg-gray-50 dark:bg-gray-700"
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={selectedRows.includes(item.id)}
+                onChange={() => handleRowSelect(item.id)}
+                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Original first column (now second column) */}
         {columns?.length > 0 && (
           <div
-            ref={firstColRef}
-            className="flex-shrink-0 sticky left-0 z-10 bg-white dark:bg-gray-800"
+            className="flex-shrink-0 sticky left-[50px] z-10 bg-white dark:bg-gray-800"
             style={{ width: columns[0].baseWidth }}
           >
-            {/* هدر */}
+            {/* header */}
             <div className="p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-r border-gray-200 dark:border-gray-600 sticky top-0 z-20">
               <div className="flex items-center justify-between">
                 {columns[0].title}
@@ -179,7 +232,7 @@ const PerfectResponsiveTable = ({
               </div>
             </div>
 
-            {/* داده‌ها */}
+            {/* data */}
             {displayData.map((item, index) => (
               <div
                 key={`first-${item.id || index}`}
@@ -195,11 +248,11 @@ const PerfectResponsiveTable = ({
           </div>
         )}
 
-        {/* ستون‌های میانی (اسکرول شونده) */}
+        {/* body column */}
         {columns?.length > 2 && (
           <div className="flex-1 overflow-x-auto">
             <div className="flex flex-col">
-              {/* هدرها */}
+              {/* headers */}
               <div className="flex">
                 {columns.slice(1, -1).map((column) => (
                   <div
@@ -224,7 +277,7 @@ const PerfectResponsiveTable = ({
                 ))}
               </div>
 
-              {/* داده‌ها */}
+              {/* data */}
               {displayData.map((item, rowIndex) => (
                 <div key={`mid-row-${item.id || rowIndex}`} className="flex">
                   {columns.slice(1, -1).map((column) => (
@@ -248,46 +301,51 @@ const PerfectResponsiveTable = ({
           </div>
         )}
 
-        {/* ستون آخر (ثابت) */}
-        {columns?.length > 1 && (
-          <div
-            ref={lastColRef}
-            className="flex-shrink-0 sticky right-0 z-10 bg-white dark:bg-gray-800"
-            style={{ width: columns[columns.length - 1].baseWidth }}
-          >
-            {/* هدر */}
-            <div className="p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-20">
-              <div className="flex items-center justify-between">
-                {columns[columns.length - 1].title}
-                {columns[columns.length - 1].sortable && (
-                  <button
-                    onClick={() => requestSort(columns[columns.length - 1].key)}
-                    className="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
-                  >
-                    {getSortIcon(columns[columns.length - 1].key)}
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* داده‌ها */}
-            {displayData.map((item, index) => (
-              <div
-                key={`last-${item.id || index}`}
-                className={`p-3 border-b border-gray-200 dark:border-gray-600 dark:text-white ${
-                  index % 2 === 0
-                    ? "bg-white dark:bg-gray-800"
-                    : "bg-gray-50 dark:bg-gray-700"
-                }`}
-              >
-                {item[columns[columns.length - 1].key]}
-              </div>
-            ))}
+        {/* Action column (replaces the last column) */}
+        <div
+          ref={lastColRef}
+          className="flex-shrink-0 sticky right-0 z-10 bg-white dark:bg-gray-800"
+          style={{ width: 180 }} // Fixed width for action column
+        >
+          {/* Action header */}
+          <div className="p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-20">
+            عملیات
           </div>
-        )}
+
+          {/* Action buttons */}
+          {displayData.map((item, index) => (
+            <div
+              key={`action-${item.id || index}`}
+              className={`p-3 border-b border-gray-200 dark:border-gray-600 dark:text-white flex items-center gap-2 ${
+                index % 2 === 0
+                  ? "bg-white dark:bg-gray-800"
+                  : "bg-gray-50 dark:bg-gray-700"
+              }`}
+            >
+              <button
+                onClick={() => onView(item)}
+                className="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+              >
+                مشاهده
+              </button>
+              <button
+                onClick={() => onEdit(item)}
+                className="px-2 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+              >
+                ویرایش
+              </button>
+              <button
+                onClick={() => onDelete(item.id)}
+                className="px-2 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+              >
+                حذف
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default PerfectResponsiveTable;
+export default Table;
