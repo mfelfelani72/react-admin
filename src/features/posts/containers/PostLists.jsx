@@ -3,14 +3,49 @@ import { DashboardIcon } from "../../core/components/Icon";
 import TableCell from "../components/TableCell.jsx";
 import TableRow from "../components/TableRow.jsx";
 import Footer from "../components/Footer.jsx";
-import Table from "../../core/components/Table/Table.jsx"
+import Table from "../../core/components/Table/Table.jsx";
 
 const PostLists = () => {
+  const data = [
+    {
+      id: 1,
+      name: "علی",
+      age: 28,
+      job: "توسعه‌دهنده",
+      city: "تهران",
+      country: "ایران",
+      score: 95,
+      status: "فعال",
+      date: "1402/05/15",
+    },
+    {
+      id: 2,
+      name: "سارا",
+      age: 32,
+      job: "طراح",
+      city: "مشهد",
+      country: "ایران",
+      score: 88,
+      status: "غیرفعال",
+      date: "1402/04/22",
+    },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: "فعال",
+      date: "1401/12/03",
+    },
+  ];
   return (
     <>
-    <div>
-      <Table />
-    </div>
+      <div>
+        <Table data={data} />
+      </div>
       {/* <div className="min-h-[calc(100vh-5.8rem)] flex flex-col overflow-hidden rounded-t-2xl">
         <table className="flex-1 overflow-y-auto bg-white rounded-2xl">
           <colgroup>
