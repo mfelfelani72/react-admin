@@ -178,18 +178,16 @@ const Table = ({
   return (
     <>
       <div
-        className="w-full overflow-hidden rounded-lg shadow dark:shadow-gray-700"
+        className="w-full bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark overflow-hidden rounded-lg shadow shadow-Shadows-light-100 dark:shadow-Shadows-dark-100"
         ref={tableRef}
       >
         {/* Search input */}
-        <div className="p-3 bg-gray-100 dark:bg-gray-700">
-          <div className="w-96">
-            <InputSearch
-              placeholder={t("Search in all fields...")}
-              onChange={(e) => handleSearch(e.target.value)}
-              value={searchTerm}
-            />
-          </div>
+        <div className="w-96 p-3">
+          <InputSearch
+            placeholder={t("Search in all fields...")}
+            onChange={(e) => handleSearch(e.target.value)}
+            value={searchTerm}
+          />
         </div>
 
         {/* Table structure */}
@@ -238,7 +236,7 @@ const Table = ({
                 {columns?.map((column) => (
                   <div
                     key={`header-${column.key}`}
-                    className="flex-shrink-0 p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-10"
+                    className="flex-shrink-0 p-3 bg-Background-light dark:bg-BackgroundSecondary-dark font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-10"
                     style={{
                       width: columnWidths[column.key] || column.baseWidth,
                     }}
