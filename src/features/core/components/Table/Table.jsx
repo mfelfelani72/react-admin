@@ -198,7 +198,7 @@ const Table = ({
             className="flex-shrink-0 sticky left-0 z-10 bg-Background-light dark:bg-Background-dark"
             style={{ width: 50 }}
           >
-            <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-gray-700 dark:text-white border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
+            <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
               <InputRadioButton
                 id={"sort-table-" + props?.id}
                 name={"check-all"}
@@ -217,7 +217,7 @@ const Table = ({
             {displayData.map((item, index) => (
               <div
                 key={`checkbox-${item.id || index}`}
-                className="p-3 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
+                className="p-3 text-Text-light dark:text-Text-dark hover:bg-HoverFocus-light-200 dark:hover:bg-HoverFocus-dark-200"
               >
                 <input
                   type="checkbox"
@@ -236,7 +236,7 @@ const Table = ({
                 {columns?.map((column) => (
                   <div
                     key={`header-${column.key}`}
-                    className="flex-shrink-0 p-3 bg-Background-light dark:bg-BackgroundSecondary-dark font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-10"
+                    className="flex-shrink-0 p-3 bg-Background-light dark:bg-BackgroundSecondary-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-10"
                     style={{
                       width: columnWidths[column.key] || column.baseWidth,
                     }}
@@ -246,7 +246,10 @@ const Table = ({
                       {column.sortable && (
                         <button
                           onClick={() => requestSort(column.key)}
-                          className="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
+                          className={cn(
+                            "text-Text-light dark:text-Text-dark hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
+                            ,"hover:text-"
+                          )}
                         >
                           {getSortIcon(column.key)}
                         </button>
