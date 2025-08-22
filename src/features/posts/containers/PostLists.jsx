@@ -45,9 +45,10 @@ const PostLists = () => {
     <>
       <div className="relative z-5">
         <Table
+          id={"mohammad"}
           data={data}
           customColumnConfig={{
-            id: { title: "id", sortable: false,  baseWidth: 50 },
+            id: { title: "id", sortable: false, baseWidth: 50 },
           }}
           onDelete={(id) => console.log("Delete item with id:", id)}
           onView={(item) => console.log("View item:", item)}
