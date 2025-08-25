@@ -137,42 +137,6 @@ const PostLists = () => {
                 <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
               ),
             },
-            {
-              title: "edit",
-              action: (item) => console.log("Edit item:", item),
-              type: "edit",
-              color: "bg-green-500",
-              icon: (
-                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
-              ),
-            },
-            {
-              title: "edit",
-              action: (item) => console.log("Edit item:", item),
-              type: "edit",
-              color: "bg-green-500",
-              icon: (
-                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
-              ),
-            },
-            {
-              title: "edit",
-              action: (item) => console.log("Edit item:", item),
-              type: "edit",
-              color: "bg-green-500",
-              icon: (
-                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
-              ),
-            },
-            {
-              title: "edit",
-              action: (item) => console.log("Edit item:", item),
-              type: "edit",
-              color: "bg-green-500",
-              icon: (
-                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
-              ),
-            },
           ]}
         />
       </div>

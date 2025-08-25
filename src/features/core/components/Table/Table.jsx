@@ -292,7 +292,7 @@ const Table = ({
           {/* Fixed action column */}
           <div
             ref={lastColRef}
-            className="flex-shrink-0 sticky right-0 z-10 bg-Background-light dark:bg-Background-dark"
+            className="flex-shrink-0 sticky right-0 z-10 bg-Background-light dark:bg-Background-dark flex flex-col justify-between"
             style={{ width: 180 }}
           >
             <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
