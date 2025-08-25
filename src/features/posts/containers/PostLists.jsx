@@ -1,5 +1,9 @@
 import React from "react";
-import { DashboardIcon } from "../../core/components/Icon";
+import {
+  DashboardIcon,
+  ViewIcon,
+  TrashIcon,
+} from "../../core/components/Icon.jsx";
 import TableCell from "../components/TableCell.jsx";
 import TableRow from "../components/TableRow.jsx";
 import Footer from "../components/Footer.jsx";
@@ -40,6 +44,61 @@ const PostLists = () => {
       status: { title: "deleted", color: "red" },
       date: "1401/12/03",
     },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: { title: "deleted", color: "red" },
+      date: "1401/12/03",
+    },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: { title: "deleted", color: "red" },
+      date: "1401/12/03",
+    },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: { title: "deleted", color: "red" },
+      date: "1401/12/03",
+    },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: { title: "deleted", color: "red" },
+      date: "1401/12/03",
+    },
+    {
+      id: 3,
+      name: "جان",
+      age: 45,
+      job: "مدیر",
+      city: "نیویورک",
+      country: "آمریکا",
+      score: 76,
+      status: { title: "deleted", color: "red" },
+      date: "1401/12/03",
+    },
   ];
   return (
     <>
@@ -50,9 +109,71 @@ const PostLists = () => {
           customColumnConfig={{
             id: { title: "id", sortable: false, baseWidth: 50 },
           }}
-          onDelete={(id) => console.log("Delete item with id:", id)}
-          onView={(item) => console.log("View item:", item)}
-          onEdit={(item) => console.log("Edit item:", item)}
+          actions={[
+            {
+              title: "delete",
+              action: (id) => console.log("Delete item with id:", id),
+              type: "delete",
+              color: "bg-red-500",
+              icon: (
+                <TrashIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "view",
+              action: (item) => console.log("View item:", item),
+              type: "view",
+              color: "bg-yellow-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "edit",
+              action: (item) => console.log("Edit item:", item),
+              type: "edit",
+              color: "bg-green-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "edit",
+              action: (item) => console.log("Edit item:", item),
+              type: "edit",
+              color: "bg-green-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "edit",
+              action: (item) => console.log("Edit item:", item),
+              type: "edit",
+              color: "bg-green-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "edit",
+              action: (item) => console.log("Edit item:", item),
+              type: "edit",
+              color: "bg-green-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+            {
+              title: "edit",
+              action: (item) => console.log("Edit item:", item),
+              type: "edit",
+              color: "bg-green-500",
+              icon: (
+                <ViewIcon className={"w-5 h-5 text-white dark:text-white"} />
+              ),
+            },
+          ]}
         />
       </div>
     </>

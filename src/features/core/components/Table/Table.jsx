@@ -199,39 +199,41 @@ const Table = ({
             className="flex-shrink-0 sticky left-0 z-10 bg-Background-light dark:bg-Background-dark"
             style={{ width: 50 }}
           >
-            <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
-              <InputRadioButton
-                id={"sort-table-" + props?.id}
-                name={"check-all"}
-                setSortRadio={setSelectAll}
-                index={"selected"}
-                onChange={() => {}}
-                checked={
-                  selectedRows.length === displayData.length &&
-                  displayData.length > 0
-                }
-                className={"w-4 h-4"}
-              />
-            </div>
-
-            {displayData.map((item, index) => (
-              <div
-                key={`checkbox-${item.id || index}`}
-                className="p-3 text-Text-light dark:text-Text-dark"
-              >
-                <input
-                  type="checkbox"
-                  checked={selectedRows.includes(item.id)}
-                  onChange={() => handleRowSelect(item.id)}
-                  className="h-4 w-4 rounded border-Line-light dark:border-Line-dark"
+            <div className="h-full flex flex-col items-start justify-between">
+              <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
+                <InputRadioButton
+                  id={"sort-table-" + props?.id}
+                  name={"check-all"}
+                  setSortRadio={setSelectAll}
+                  index={"selected"}
+                  onChange={() => {}}
+                  checked={
+                    selectedRows.length === displayData.length &&
+                    displayData.length > 0
+                  }
+                  className={"w-3.5 h-3.5"}
                 />
               </div>
-            ))}
+
+              {displayData.map((item, index) => (
+                <div
+                  key={`checkbox-${item.id || index}`}
+                  className="p-3 text-Text-light dark:text-Text-dark"
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedRows.includes(item.id)}
+                    onChange={() => handleRowSelect(item.id)}
+                    className="h-4 w-4 rounded border-Line-light dark:border-Line-dark"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Main data columns */}
           <div className="flex-1 overflow-x-auto scrollbar">
-            <div className="flex flex-col">
+            <div className="flex flex-col h-full justify-between">
               <div className="flex">
                 {columns?.map((column) => (
                   <div
@@ -300,26 +302,26 @@ const Table = ({
             {displayData.map((item, index) => (
               <div
                 key={`action-${item.id || index}`}
-                className="p-3 dark:text-white flex items-center gap-2"
+                className="p-3 dark:text-white grid grid-cols-3 justify-between  items-center gap-2 ltr:border-l rtl:border-r border-Line-light dark:border-Line-dark"
               >
-                <button
-                  onClick={() => onView(item)}
-                  className="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-                >
-                  View
-                </button>
-                <button
-                  onClick={() => onEdit(item)}
-                  className="px-2 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => onDelete(item.id)}
-                  className="px-2 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-                >
-                  Delete
-                </button>
+                {props.actions?.map((action, index) => (
+                  <div
+                    key={index}
+                    className={cn(
+                      "action-item flex mx-1 items-center justify-center rounded-md cursor-pointer w-10 h-5",
+                      action.color
+                    )}
+                  >
+                    <button
+                      onClick={() => {
+                        action.action(item.id);
+                      }}
+                      className={`cursor-pointer`}
+                    >
+                      {action.icon}
+                    </button>
+                  </div>
+                ))}
               </div>
             ))}
           </div>

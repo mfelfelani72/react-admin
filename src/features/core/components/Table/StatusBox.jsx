@@ -56,7 +56,7 @@ const StatusBox = ({ className, status, ...props }) => {
           colors.dot
         )}
       ></div>
-      <div className={colors.text}>
+      <div className={cn(colors.text,"mt-1")}>
         {t(status?.title || "")}
       </div>
     </div>

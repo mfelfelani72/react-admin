@@ -138,6 +138,10 @@
 }
 
 @layer utilities {
+
+  body{
+    overflow: hidden;
+  }
   /* loading  */
 
   .animate-text-scroll-y {
