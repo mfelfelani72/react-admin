@@ -212,6 +212,51 @@
   .left-to-right {
     direction: ltr;
   }
+
+  /* Light mode scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: #dad8d8;
+    border-radius: 5px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #4c4b58;
+    border-radius: 5px;
+    height: 28px !important;
+  }
+
+  /* Dark mode scrollbar */
+  .dark .scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .dark .scrollbar::-webkit-scrollbar-track {
+    background: #4c4b58;
+    border-radius: 5px;
+  }
+
+  .dark .scrollbar::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+    border-radius: 5px;
+    height: 28px !important;
+  }
+
+  /* remove scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
+  }
 }
 
 @theme {

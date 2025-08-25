@@ -15,7 +15,7 @@ const PostLists = () => {
       city: "تهران",
       country: "ایران",
       score: 95,
-      status: "فعال",
+      status: { title: "enable", color: "orange" },
       date: "1402/05/15",
     },
     {
@@ -26,7 +26,7 @@ const PostLists = () => {
       city: "مشهد",
       country: "ایران",
       score: 88,
-      status: "غیرفعال",
+      status: { title: "disable", color: "orange" },
       date: "1402/04/22",
     },
     {
@@ -37,7 +37,7 @@ const PostLists = () => {
       city: "نیویورک",
       country: "آمریکا",
       score: 76,
-      status: "فعال",
+      status: { title: "enable", color: "amber" },
       date: "1401/12/03",
     },
   ];

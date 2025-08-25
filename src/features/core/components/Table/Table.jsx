@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 // Components
 
 import { InputRadioButton, InputSearch } from "../Input";
+import StatusBox from "./StatusBox.jsx";
 
 // Functions
 
@@ -178,7 +179,7 @@ const Table = ({
   return (
     <>
       <div
-        className="w-full bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark overflow-hidden rounded-lg shadow shadow-Shadows-light-100 dark:shadow-Shadows-dark-100"
+        className="w-full bg-Background-light dark:bg-Background-dark overflow-hidden rounded-lg shadow shadow-Shadows-light-100 dark:shadow-Shadows-dark-100"
         ref={tableRef}
       >
         {/* Search input */}
@@ -205,50 +206,52 @@ const Table = ({
                 setSortRadio={setSelectAll}
                 index={"selected"}
                 onChange={() => {}}
-                // onChange={handleSelectAll}
                 checked={
                   selectedRows.length === displayData.length &&
                   displayData.length > 0
                 }
-                className={""}
+                className={"w-4 h-4"}
               />
             </div>
 
             {displayData.map((item, index) => (
               <div
                 key={`checkbox-${item.id || index}`}
-                className="p-3 text-Text-light dark:text-Text-dark hover:bg-HoverFocus-light-200 dark:hover:bg-HoverFocus-dark-200"
+                className="p-3 text-Text-light dark:text-Text-dark"
               >
                 <input
                   type="checkbox"
                   checked={selectedRows.includes(item.id)}
                   onChange={() => handleRowSelect(item.id)}
-                  className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500 dark:border-gray-600 dark:bg-gray-800"
+                  className="h-4 w-4 rounded border-Line-light dark:border-Line-dark"
                 />
               </div>
             ))}
           </div>
 
           {/* Main data columns */}
-          <div className="flex-1 overflow-x-auto">
+          <div className="flex-1 overflow-x-auto scrollbar">
             <div className="flex flex-col">
               <div className="flex">
                 {columns?.map((column) => (
                   <div
                     key={`header-${column.key}`}
-                    className="flex-shrink-0 p-3 bg-Background-light dark:bg-BackgroundSecondary-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-10"
+                    className="flex-shrink-0 p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-10"
                     style={{
                       width: columnWidths[column.key] || column.baseWidth,
                     }}
                   >
                     <div className="flex items-center justify-between">
-                      {column.title}
+                      <span className="capitalize text-md select-none font-bold">
+                        {column.title}
+                      </span>
                       {column.sortable && (
                         <button
                           onClick={() => requestSort(column.key)}
                           className={cn(
-                            "text-Text-light dark:text-Text-dark hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
-                            ,"hover:text-"
+                            "text-Text-light dark:text-Text-dark focus:outline-none cursor-pointer text-sm select-none",
+                            "hover:text-" + themeColor,
+                            "dark:hover:text-" + themeColor
                           )}
                         >
                           {getSortIcon(column.key)}
@@ -262,17 +265,21 @@ const Table = ({
               {displayData.map((item, rowIndex) => (
                 <div
                   key={`row-${item.id || rowIndex}`}
-                  className="flex hover:bg-gray-100 dark:hover:bg-gray-600"
+                  className="flex hover:bg-BackgroundSecondary-light dark:hover:bg-BackgroundSecondary-dark"
                 >
                   {columns?.map((column) => (
                     <div
                       key={`cell-${item.id || rowIndex}-${column.key}`}
-                      className="flex-shrink-0 p-3 dark:text-white"
+                      className="flex-shrink-0 p-3 text-Text-light dark:text-Text-dark text-sm font-medium"
                       style={{
                         width: columnWidths[column.key] || column.baseWidth,
                       }}
                     >
-                      {item[column.key]}
+                      {column.key === "status" ? (
+                        <StatusBox status={item[column.key]} />
+                      ) : (
+                        item[column.key]
+                      )}
                     </div>
                   ))}
                 </div>
@@ -283,17 +290,17 @@ const Table = ({
           {/* Fixed action column */}
           <div
             ref={lastColRef}
-            className="flex-shrink-0 sticky right-0 z-10 bg-white dark:bg-gray-800"
+            className="flex-shrink-0 sticky right-0 z-10 bg-Background-light dark:bg-Background-dark"
             style={{ width: 180 }}
           >
-            <div className="p-3 bg-gray-100 dark:bg-gray-700 font-bold text-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600 sticky top-0 z-20">
+            <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
               Actions
             </div>
 
             {displayData.map((item, index) => (
               <div
                 key={`action-${item.id || index}`}
-                className="p-3 dark:text-white flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+                className="p-3 dark:text-white flex items-center gap-2"
               >
                 <button
                   onClick={() => onView(item)}
