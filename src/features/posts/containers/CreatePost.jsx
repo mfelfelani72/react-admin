@@ -4,14 +4,14 @@ import FormSelect from "../components/FormSelect.jsx";
 import FormImageDrag from "../components/FormImageDrag.jsx";
 // import ButtonLink from "../../core/components/Button.jsx";
 
-// import useTranslation from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "../../../../utils/libs/cn.js";
 import useAppStore from "../../../app/stores/AppStore.js";
 
 const CreatePost = () => {
   // hooks
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   // states
   const themeColor = useAppStore((state) => state.themeColor);
@@ -19,7 +19,7 @@ const CreatePost = () => {
   return (
     <div className="bg-Background-light dark:bg-Background-dark h-auto rounded-2xl text-Text-light dark:text-Text-dark">
       <div className="p-[1.5rem] border-b border-b-Line-light dark:border-Line-dark">
-        <h5 className="font-bold">Post Details</h5>
+        <h5 className="font-bold">{t("post_details")}</h5>
       </div>
 
       <div className="p-[1.5rem] flex flex-row justify-between">

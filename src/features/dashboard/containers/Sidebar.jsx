@@ -85,7 +85,7 @@ const Sidebar = () => {
 
           <hr className="border-Line-light dark:border-Line-dark mt-3.5"/>
 
-          <h5 className="font-bold text-Text-light dark:text-Text-dark m-3">Settings</h5>
+          <h5 className="font-bold text-Text-light dark:text-Text-dark m-3">{t("settings")}</h5>
 
           <DropListBox
             id={"authentication"}
