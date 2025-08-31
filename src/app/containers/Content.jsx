@@ -30,6 +30,14 @@ const LazyCreatePost = lazy(() =>
   import("../../features/posts/containers/CreatePost.jsx")
 );
 
+const LazyLogin = lazy(() =>
+  import("../../features/auth/containers/LogIn.jsx")
+);
+
+const LazyRegister = lazy(() =>
+  import("../../features/auth//containers/Register.jsx")
+);
+
 const Content = () => {
   return (
     <>
@@ -48,6 +56,8 @@ const Content = () => {
           <Route path="/create-post" element={<LazyCreatePost />} />
           <Route path="/posts" element={<LazyPostsLists />} />
         </Route>
+          <Route path="/login" element={<LazyLogin />} />
+          <Route path="/register" element={<LazyRegister />} />
       </Routes>
     </>
   );

@@ -82,6 +82,40 @@ const Sidebar = () => {
               },
             ]}
           />
+
+          <hr className="border-Line-light dark:border-Line-dark mt-3.5"/>
+
+          <h5 className="font-bold text-Text-light dark:text-Text-dark m-3">Settings</h5>
+
+          <DropListBox
+            id={"authentication"}
+            icon={
+              <PostsIcon
+                className={`text-${themeColor} dark:text-${themeColor}`}
+              />
+            }
+            title={"authentication"}
+            items={[
+              {
+                name: "log_in",
+                icon: (
+                  <ListIcon
+                    className={`w-5 h-5 text-${themeColor} dark:text-${themeColor}`}
+                  />
+                ),
+                link: "/login",
+              },
+              {
+                name: "register",
+                icon: (
+                  <ListIcon
+                    className={`w-5 h-5 text-${themeColor} dark:text-${themeColor}`}
+                  />
+                ),
+                link: "/register",
+              }
+            ]}
+          />
         </div>
       </div>
     </>

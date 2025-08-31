@@ -38,26 +38,6 @@ const PostLists = () => {
           </thead>
           <tbody>
             <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
-            <TableRow name={"Yasin Amini"} email={"ton.618@yahoo.com"} cours={"3"} certificate={"2"} />
           </tbody>
         </table>
         <Footer />

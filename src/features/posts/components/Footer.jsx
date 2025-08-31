@@ -4,10 +4,7 @@ import { cn } from "../../../../utils/libs/cn.js";
 const Footer = ({ className, ...props }) => {
   return (
     <>
-    <footer className="p-[1rem] bg-white mt-5 rounded-t-2xl">
-      footer
-    </footer>
-      {/* <footer className="bg-white p-5 w-full rounded-t-2xl flex justify-between font-light">
+      <footer className="bg-white p-5 w-full rounded-t-2xl flex justify-between font-light">
         <div>
           <span>© Copyright Edmate 2024, All Right Reserverd</span>
         </div>
@@ -17,7 +14,7 @@ const Footer = ({ className, ...props }) => {
           <a href="#">Documentationns</a>
           <a href="#">Support</a>
         </div>
-      </footer> */}
+      </footer>
     </>
   );
 };

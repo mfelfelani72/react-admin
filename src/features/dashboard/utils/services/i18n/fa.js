@@ -1,17 +1,17 @@
 const fa = {
   // sidebar
-  dashboard: "داشبورد",
+  dashboard: "پیش‌خوان",
 
   // header
   search: "جستجو",
   notification: "پیام ها",
-  account_setting: "تنظیمات اکانت",
+  account_setting: "ساماندهی رایابرگ",
   dark_light: "روشن / تیره",
   color: "رنگ",
-  log_out: "خروج",
+  log_out: "برون شدن",
 
   // language
-  persion: "فارسی",
+  persion: "پارسی",
   english: "انگلیسی",
 };
 
