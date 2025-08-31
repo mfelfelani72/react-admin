@@ -29,7 +29,7 @@ const Header = () => {
   const themeColor = useAppStore((state) => state.themeColor);
   return (
     <>
-      <div className="fixed w-[calc(100vw-16rem)] bg-Background-light dark:bg-Background-dark py-4 px-8 flex flex-row justify-between items-center border-b border-Line-light dark:border-Line-dark">
+      <div className="fixed w-[calc(100vw-16rem)] z-[900] bg-Background-light dark:bg-Background-dark py-4 px-8 flex flex-row justify-between items-center border-b border-Line-light dark:border-Line-dark">
         {/* search */}
         <div className="w-96">
           <InputSearch placeholder={t("search")} />
@@ -43,7 +43,7 @@ const Header = () => {
             className={"bottom-5"}
             gap={16}
             trigger={
-              <div className="elative bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
+              <div className="relative bg-BackgroundSecondary-light dark:bg-BackgroundSecondary-dark w-10 h-10 rounded-full inline-flex items-center justify-center cursor-pointer">
                 <UserSettingIcon />
               </div>
             }

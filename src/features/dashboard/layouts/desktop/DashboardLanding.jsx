@@ -9,9 +9,9 @@ const DashboardLanding = () => {
   return (
     <>
       <Sidebar />
-      <div className="w-[calc(100vw-16rem)] ltr:ml-[16rem] rtl:mr-[16rem]">
+      <div className="w-[calc(100dvw-16rem)] ltr:ml-[16rem] rtl:mr-[16rem]">
         <Header />
-        <div className="mt-[4.5rem] bg-BackgroundSection-light dark:bg-BackgroundSection-dark min-h-[calc(100vh-4.5rem)] p-5">
+        <div className="overflow-y-auto h-dvh pb-[6rem] scrollbar mt-[4.5rem] bg-BackgroundSection-light dark:bg-BackgroundSection-dark min-h-[calc(100vh-4.5rem)] p-5">
           <Outlet />
         </div>
       </div>
