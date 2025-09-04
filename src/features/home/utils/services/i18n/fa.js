@@ -1,6 +1,6 @@
 const fa = {
    home:"خانه" ,
-   authentication: "گواهی",
+   authentication: "شناسه سنجی",
 };
 
 export default fa;
