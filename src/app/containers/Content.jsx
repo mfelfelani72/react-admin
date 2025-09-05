@@ -52,14 +52,14 @@ const Content = () => {
 
         {/* Dashboard */}
         <Route path="/" element={<LazyDashboardLanding />}>
-          <Route path="/home" element={<LazyHomeLanding />}/>
+          <Route path="/home" element={<LazyHomeLanding />} />
           <Route path="/create-post" element={<LazyCreatePost />} />
           <Route path="/posts" element={<LazyPostsLists />} />
         </Route>
-        
+
         {/* Auth */}
-          <Route path="/login" element={<LazyLogin />} />
-          <Route path="/register" element={<LazyRegister />} />
+        <Route path="/login" element={<LazyLogin />} />
+        <Route path="/register" element={<LazyRegister />} />
       </Routes>
     </>
   );

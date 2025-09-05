@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Functions
 
@@ -96,9 +97,7 @@ const LogIn = () => {
             </button>
             <p className="text-center">
               {t("new_on_platform")}
-              <a href="#" className={`text-${themeColor}`}>
-                {t("create_an_account")}
-              </a>
+              <Link to="/register"  className={`text-${themeColor}`}>{t("sign_up")}</Link>
             </p>
             <div>
               <div className="flex flex-row justify-between items-center gap-x-7 my-10 [&>hr]:w-full [&>hr]:border-Line-light dark:[&>hr]:border-Line-dark">
