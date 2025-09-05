@@ -101,7 +101,7 @@ const LogIn = () => {
               </a>
             </p>
             <div>
-              <div className="flex flex-row justify-between items-center gap-x-7 my-5 [&>hr]:w-full [&>hr]:border-Line-light dark:[&>hr]:border-Line-dark">
+              <div className="flex flex-row justify-between items-center gap-x-7 my-10 [&>hr]:w-full [&>hr]:border-Line-light dark:[&>hr]:border-Line-dark">
                 <hr />
                 <span className="leading-0">{t("or")}</span>
                 <hr />

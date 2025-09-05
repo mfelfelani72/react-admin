@@ -3,7 +3,7 @@ const en = {
   posts_list: "Posts Lists",
   create_post: "Creat Post",
   settings: "Settings",
-  log_in: "Login",
+  log_in: " Login",
   register: "Register",
   post_details: "Post Details",
   thumbnail_image: "Thumbnail Image",
@@ -29,6 +29,12 @@ const en = {
   sign_in: "Sign In",
   new_on_platform: "New on Platform? ",
   create_an_account: "Create an Account",
+  sign_up: "Sign Up",
+  please_sign_up_to_your_account_and_start_the_adventure: "Please sign up to start the adventure",
+  username: "Username",
+  enter_your_username: "Enter your username",
+  must_be_at_least_8_characters: "Must be at least 8 characters",
+  already_have_an_account: "Already have an account?",
 };
 
 export default en;

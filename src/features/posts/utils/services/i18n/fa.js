@@ -19,7 +19,7 @@ const fa = {
   yasin: "آریا",
 
   welcome_back: "خوش برگشتی",
-  please_sign_in_to_your_account_and_start_the_adventure: "در دفتر خویش درآیید و ماجرا را آغاز کنید",
+  please_sign_in_to_your_account_and_start_the_adventure: "در دفتر خود درآیید و ماجرا را آغاز کنید",
   email_or_username: "رایانامه یا نام کاربری",
   enter_your_email: "نشانی رایابرگ خود را درون کنید",
   password: "گذرواژه",
@@ -29,6 +29,8 @@ const fa = {
   sign_in: "درون شوید",
   new_on_platform: " تازه به این بستر آمده اید؟",
   create_an_account: " دفتری نو بسازید",
+  sign_up: "نام نویسی",
+  please_sign_up_to_your_account_and_start_the_adventure: "برای آغاز ماجرا نام نویسی کنید",
 };
 
 export default fa;
