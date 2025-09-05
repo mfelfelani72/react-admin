@@ -17,7 +17,7 @@ const en = {
   select_category: "Select category",
   option: "Optoin",
   yasin: "Arya",
-
+  
   welcome_back: "Welcome Back",
   please_sign_in_to_your_account_and_start_the_adventure: "Please sign in to your account and start the adventure",
   email_or_username: "Email or Username",
@@ -26,15 +26,16 @@ const en = {
   enter_your_password: "Enter your Password",
   remember_me: "Remember me",
   forget_password: "Forgot Password?",
-  sign_in: "Sign In",
+  sign_up: "Sign Up",
   new_on_platform: "New on Platform? ",
   create_an_account: "Create an Account",
-  sign_up: "Sign Up",
-  please_sign_up_to_your_account_and_start_the_adventure: "Please sign up to start the adventure",
+  please_sign_up_to_start_the_adventure: "Please sign up to start the adventure",
   username: "Username",
   enter_your_username: "Enter your username",
+  email: "Email",
   must_be_at_least_8_characters: "Must be at least 8 characters",
   already_have_an_account: "Already have an account?",
+  sign_in: "Sign In",
 };
 
 export default en;

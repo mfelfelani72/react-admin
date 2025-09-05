@@ -39,7 +39,7 @@ const LogIn = () => {
       </div>
 
       <div className="w-[45%] bg-Background-light dark:bg-Background-dark flex items-center justify-center">
-        <div className="w-100 h-full flex flex-col items-start justify-center">
+        <div className="w-100 max-w-[400px] max-h-[90vh] flex flex-col items-start justify-center">
           <div className="flex flex-row w-full mb-25 gap-4 justify-start items-center">
             <DashboardIcon
               className={cn(
@@ -54,9 +54,9 @@ const LogIn = () => {
           </div>
           <div className="mb-10">
             <h1 className="text-3xl">{t("sign_up")}</h1>
-            <p>{t("please_sign_up_to_your_account_and_start_the_adventure")}</p>
+            <p>{t("please_sign_up_to_start_the_adventure")}</p>
           </div>
-          <form action="#" className="w-full">
+          <form action="#" className="w-full overflow-y-auto overflow-x-hidden">
             <div className="mb-5">
               <FormInput
                 title={"username"}
@@ -106,7 +106,9 @@ const LogIn = () => {
             </button>
             <p className="text-center">
               {t("already_have_an_account")}
-              <Link to="/login" className={`text-${themeColor}`}>{t("log_in")}</Link>
+              <Link to="/login" className={`text-${themeColor}`}>
+                {t("log_in")}
+              </Link>
             </p>
             <div>
               <div className="flex flex-row justify-between items-center gap-x-7 my-10 [&>hr]:w-full [&>hr]:border-Line-light dark:[&>hr]:border-Line-dark">

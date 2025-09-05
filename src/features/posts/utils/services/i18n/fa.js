@@ -26,11 +26,16 @@ const fa = {
   enter_your_password: "گذرواژه خود را درون کنید",
   remember_me: "مرا به یاد بسپار",
   forget_password: "گذرواژه را فراموش کردید؟",
-  sign_in: "درون شوید",
-  new_on_platform: " تازه به این بستر آمده اید؟",
-  create_an_account: " دفتری نو بسازید",
   sign_up: "نام نویسی",
-  please_sign_up_to_your_account_and_start_the_adventure: "برای آغاز ماجرا نام نویسی کنید",
+  new_on_platform: "تازه به این بستر آمده اید؟ ",
+  create_an_account: " دفتری نو بسازید",
+  please_sign_up_to_start_the_adventure: "برای آغاز ماجرا نام نویسی کنید",
+  username: "نام‌کاربری",
+  enter_your_username: "نام‌کاربری خود را درون کنید",
+  email: "رایانامه",
+  must_be_at_least_8_characters: "دست‌کم باید هشت وات داشته باشد",
+  already_have_an_account: "هم‌اینک نام‌نویسی کرده اید؟ ",
+  sign_in: "درون شوید",
 };
 
 export default fa;

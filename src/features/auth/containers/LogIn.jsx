@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Functions
@@ -18,6 +18,7 @@ import {
   Twitter,
 } from "../../core/components/Icon.jsx";
 import FormInput from "../../core/components/Form/FormInput.jsx";
+import FormPassword from "../../core/components/Form/FormPassword.jsx";
 
 const LogIn = () => {
   // hooks
@@ -39,7 +40,7 @@ const LogIn = () => {
       </div>
 
       <div className="w-[45%] bg-Background-light dark:bg-Background-dark flex items-center justify-center">
-        <div className="w-100 h-full flex flex-col items-start justify-center">
+        <div className="w-100 max-w-[400px] max-h-[90vh] flex flex-col items-start justify-center">
           <div className="flex flex-row w-full mb-25 gap-4 justify-start items-center">
             <DashboardIcon
               className={cn(
@@ -56,7 +57,7 @@ const LogIn = () => {
             <h1 className="text-3xl">{t("welcome_back")} 👋</h1>
             <p>{t("please_sign_in_to_your_account_and_start_the_adventure")}</p>
           </div>
-          <form action="#" className="w-full">
+          <form action="#" className="w-full overflow-y-auto overflow-x-hidden">
             <div className="mb-5">
               <FormInput
                 title={"email_or_username"}
@@ -65,18 +66,11 @@ const LogIn = () => {
               />
             </div>
             <div className="mb-5">
-              <FormInput
+              <FormPassword
                 title={"password"}
-                type={"password"}
                 placeholder={"enter_your_password"}
               />
-              <button
-                className="hidden"
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? "Show" : "Hidden"}
-              </button>
+              {/* show hide button */}
             </div>
             <div className="flex flex-row items-center justify-between">
               <div className="inline-block">
