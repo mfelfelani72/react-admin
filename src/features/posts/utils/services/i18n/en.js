@@ -17,6 +17,18 @@ const en = {
   select_category: "Select category",
   option: "Optoin",
   yasin: "Arya",
+
+  welcome_back: "Welcome Back",
+  please_sign_in_to_your_account_and_start_the_adventure: "Please sign in to your account and start the adventure",
+  email_or_username: "Email or Username",
+  enter_your_email: "Enter your email",
+  password: "Password",
+  enter_your_password: "Enter your Password",
+  remember_me: "Remember me",
+  forget_password: "Forgot Password?",
+  sign_in: "Sign In",
+  new_on_platform: "New on Platform? ",
+  create_an_account: "Create an Account",
 };
 
 export default en;

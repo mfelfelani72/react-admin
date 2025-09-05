@@ -5,8 +5,8 @@ const fa = {
   settings: "سامانگاه",
   log_in: "درون گشتن",
   register: "نام نویسی",
-  post_details: 'ریزگان فرسته',
-  thumbnail_image:"پیش‌نمایش",
+  post_details: "ریزگان فرسته",
+  thumbnail_image: "پیش‌نمایش",
   required: " (نیازین)",
   name_of_the_post: "نام فرسته",
   open: "باز کنید",
@@ -17,6 +17,18 @@ const fa = {
   select_category: "گزیدن دسته‌بندی",
   option: "گزینه",
   yasin: "آریا",
+
+  welcome_back: "خوش برگشتی",
+  please_sign_in_to_your_account_and_start_the_adventure: "در دفتر خویش درآیید و ماجرا را آغاز کنید",
+  email_or_username: "رایانامه یا نام کاربری",
+  enter_your_email: "نشانی رایابرگ خود را درون کنید",
+  password: "گذرواژه",
+  enter_your_password: "گذرواژه خود را درون کنید",
+  remember_me: "مرا به یاد بسپار",
+  forget_password: "گذرواژه را فراموش کردید؟",
+  sign_in: "درون شوید",
+  new_on_platform: " تازه به این بستر آمده اید؟",
+  create_an_account: " دفتری نو بسازید",
 };
 
 export default fa;

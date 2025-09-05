@@ -53,14 +53,14 @@ const LogIn = () => {
           </div>
           <div className="mb-10">
             <h1 className="text-3xl">{t("welcome_back")} 👋</h1>
-            <p>{t("Please sign in to your account and start the adventure")}</p>
+            <p>{t("please_sign_in_to_your_account_and_start_the_adventure")}</p>
           </div>
           <form action="#" className="w-full">
             <div className="mb-5">
               <FormInput
                 title={"email_or_username"}
                 type={"email"}
-                placeholder={"Enter your Email"}
+                placeholder={"enter_your_email"}
               />
             </div>
             <div className="mb-5">
@@ -86,7 +86,7 @@ const LogIn = () => {
                 <label htmlFor="remember"> {t("remember_me")}</label>
               </div>
               <a href="#" className={`text-${themeColor}`}>
-                {t("forget_password") + "?"}
+                {t("forget_password")}
               </a>
             </div>
             <button
@@ -95,9 +95,9 @@ const LogIn = () => {
               {t("sign_in")}
             </button>
             <p className="text-center">
-              {t("new_on_platform") + "? "}
+              {t("new_on_platform")}
               <a href="#" className={`text-${themeColor}`}>
-                {t("creat_an_account")}
+                {t("create_an_account")}
               </a>
             </p>
             <div>
@@ -107,26 +107,20 @@ const LogIn = () => {
                 <hr />
               </div>
             </div>
-            <ul className="flex flex-row justify-center items-center gap-x-3.5 [&>li]:cursor-pointer [&>li]:rounded-lg [&>li]:p-1.5">
-              <li className="bg-[#f9e1df]">
+            <ul className="flex flex-row rlt:flex-row-reverse justify-center items-center gap-x-3.5 [&>li]:cursor-pointer [&>li]:rounded-lg [&>li]:p-1.5">
+              <li className="bg-[#f9e1df] dark:bg-[#c9a8a5]">
                 <a href="#">
-                  <Google
-                    className={`fill-${themeColor} dark:fill-${themeColor}`}
-                  />
+                  <Google />
                 </a>
               </li>
-              <li className="bg-[#dbf0fd]">
+              <li className="bg-[#dbf0fd] dark:bg-[#9bc4e2]">
                 <a href="#">
-                  <Twitter
-                    className={`text-${themeColor} dark:text-${themeColor}`}
-                  />
+                  <Twitter />
                 </a>
               </li>
-              <li className="bg-[#e1e7f3]">
+              <li className="bg-[#e1e7f3] dark:bg-[#9aa3c0]">
                 <a href="#">
-                  <FaceBook
-                    className={`text-${themeColor} dark:text-${themeColor}`}
-                  />
+                  <FaceBook />
                 </a>
               </li>
             </ul>
