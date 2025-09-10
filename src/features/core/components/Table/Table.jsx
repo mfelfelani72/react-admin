@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 // Components
 
-import { InputRadioButton, InputSearch } from "../Input";
+import { InputCheckBoxButton, InputRadioButton, InputSearch } from "../Input";
 import StatusBox from "./StatusBox.jsx";
+import { ButtonNoLink } from "../Button.jsx";
 
 // Functions
 
@@ -25,6 +27,7 @@ const Table = ({
 }) => {
   // hooks
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   // State management
   const initialData = data;
@@ -182,13 +185,36 @@ const Table = ({
         className="w-full bg-Background-light dark:bg-Background-dark overflow-hidden rounded-lg shadow shadow-Shadows-light-100 dark:shadow-Shadows-dark-100"
         ref={tableRef}
       >
-        {/* Search input */}
-        <div className="w-96 p-3">
-          <InputSearch
-            placeholder={t("Search in all fields...")}
-            onChange={(e) => handleSearch(e.target.value)}
-            value={searchTerm}
-          />
+        <div className="flex flex-row justify-between items-center">
+          {/* Search input */}
+          <div className="w-96 p-3">
+            <InputSearch
+              placeholder={t("Search in all fields...")}
+              onChange={(e) => handleSearch(e.target.value)}
+              value={searchTerm}
+            />
+          </div>
+
+          <div className="flex flex-row gap-2 px-4">
+            <ButtonNoLink
+              onClick={() => {
+                console.log(selectedRows);
+              }}
+              className={"h-8 rounded-md bg-Error-500 dark:bg-Error-500"}
+            >
+              {t("delete")}
+            </ButtonNoLink>
+            <ButtonNoLink
+              onClick={() => {
+                navigate(props?.links?.create);
+              }}
+              className={
+                "h-8 rounded-md bg-Success-500 dark:bg-Success-500 hover:bg-Success-600"
+              }
+            >
+              {t("create")}
+            </ButtonNoLink>
+          </div>
         </div>
 
         {/* Table structure */}
@@ -220,11 +246,11 @@ const Table = ({
                   key={`checkbox-${item.id || index}`}
                   className="p-3 text-Text-light dark:text-Text-dark"
                 >
-                  <input
-                    type="checkbox"
+                  <InputCheckBoxButton
+                    id={"sort-table-" + index}
                     checked={selectedRows.includes(item.id)}
                     onChange={() => handleRowSelect(item.id)}
-                    className="h-4 w-4 rounded border-Line-light dark:border-Line-dark"
+                    className={"w-3.5 h-3.5"}
                   />
                 </div>
               ))}
@@ -244,8 +270,8 @@ const Table = ({
                     }}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="capitalize text-md select-none font-bold">
-                        {column.title}
+                      <span className="text-md select-none font-bold">
+                        {t(column.title)}
                       </span>
                       {column.sortable && (
                         <button
@@ -296,7 +322,7 @@ const Table = ({
             style={{ width: 180 }}
           >
             <div className="p-3 bg-Background-light dark:bg-Background-dark font-bold text-Text-light dark:text-Text-dark border-b border-Line-light dark:border-Line-dark sticky top-0 z-20">
-              Actions
+              {t("actions")}
             </div>
 
             {displayData.map((item, index) => (

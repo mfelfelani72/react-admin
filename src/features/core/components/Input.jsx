@@ -638,3 +638,19 @@ export const InputRadioButton = ({ className, setSortRadio, ...props }) => {
     </>
   );
 };
+export const InputCheckBoxButton = ({ className, setSortRadio, ...props }) => {
+  // states
+  const themeColor = useAppStore((state) => state.themeColor);
+  return (
+    <>
+      <input
+        {...props}
+        type="checkbox"
+        className={cn(
+          `appearance-none w-5 h-5 transition-all bg-BackgroundSection-light dark:bg-BackgroundSection-dark border-Line-light dark:border-Line-dark rounded cursor-pointer checked:bg-${themeColor} checked:border-${themeColor} focus:ring-0 focus:ring-offset-0 relative after:content-[''] after:absolute after:inset-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjIwIDYgOSAxNyA0IDEyIj48L3BvbHlsaW5lPjwvc3ZnPg==')] after:bg-no-repeat after:bg-center after:opacity-0 checked:after:opacity-100`,
+          className
+        )}
+      />
+    </>
+  );
+};

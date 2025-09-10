@@ -4,10 +4,10 @@ import {
   ViewIcon,
   TrashIcon,
 } from "../../core/components/Icon.jsx";
-import TableCell from "../components/TableCell.jsx";
-import TableRow from "../components/TableRow.jsx";
+
 import Footer from "../components/Footer.jsx";
 import Table from "../../core/components/Table/Table.jsx";
+import { create } from "zustand";
 
 const PostLists = () => {
   const data = [
@@ -44,61 +44,6 @@ const PostLists = () => {
       status: { title: "deleted", color: "red" },
       date: "1401/12/03",
     },
-    {
-      id: 3,
-      name: "جان",
-      age: 45,
-      job: "مدیر",
-      city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: { title: "deleted", color: "red" },
-      date: "1401/12/03",
-    },
-    {
-      id: 3,
-      name: "جان",
-      age: 45,
-      job: "مدیر",
-      city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: { title: "deleted", color: "red" },
-      date: "1401/12/03",
-    },
-    {
-      id: 3,
-      name: "جان",
-      age: 45,
-      job: "مدیر",
-      city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: { title: "deleted", color: "red" },
-      date: "1401/12/03",
-    },
-    {
-      id: 3,
-      name: "جان",
-      age: 45,
-      job: "مدیر",
-      city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: { title: "deleted", color: "red" },
-      date: "1401/12/03",
-    },
-    {
-      id: 3,
-      name: "جان",
-      age: 45,
-      job: "مدیر",
-      city: "نیویورک",
-      country: "آمریکا",
-      score: 76,
-      status: { title: "deleted", color: "red" },
-      date: "1401/12/03",
-    },
   ];
   return (
     <>
@@ -106,6 +51,9 @@ const PostLists = () => {
         <Table
           id={"mohammad"}
           data={data}
+          links={{
+            create:"/create-post"
+          }}
           customColumnConfig={{
             id: { title: "id", sortable: false, baseWidth: 50 },
           }}
